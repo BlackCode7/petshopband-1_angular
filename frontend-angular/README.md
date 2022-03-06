@@ -1,14 +1,28 @@
-
-ng g c components/clientes/cadastrar-cliente
-ng g c components/clientes/listar-clientes
-ng g s components/clientes/cadastrar-cliente
-ng g m components/clientes/cadastrar-cliente
+nome da branch principal >>> PetShopBand
 
 ng g c components/home/header 
 ng g c components/home/footer
 
-ng g c components/fornecedores/cadastrar-fornecedor
+###########################################
+criando components / services / modules
+-------------------------------------------
+ng g c components/clientes/cadastrar-cliente
+ng g s components/clientes/cadastrar-cliente/services 
+ng g m components/clientes/cadastrar-cliente
+
+ng g c components/clientes/listar-clientes
+ng g s components/clientes/listar-clientes/services 
+ng g m components/clientes/listar-clientes
+
+-----------------------------------------------
 ng g c components/fornecedores/listar-fornecedores
+ng g s components/fornecedores/listar-fornecedores/services
+ng g m components/fornecedores/listar-fornecedores
+
+ng g c components/fornecedores/cadastrar-fornecedor
+ng g s components/fornecedores/cadastrar-fornecedor/services
+ng g m components/fornecedores/cadastrar-fornecedor
+-----------------------------------------------
 
 ng g c components/produtos/cadastrar-produto
 ng g c components/produtos/listar-produtos

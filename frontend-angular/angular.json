@@ -31,7 +31,6 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
             ],
             "scripts": [
-              "src/styles.js",
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
