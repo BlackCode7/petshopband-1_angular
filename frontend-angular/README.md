@@ -1,3 +1,35 @@
+
+ng g c components/clientes/cadastrar-cliente
+ng g c components/clientes/listar-clientes
+ng g s components/clientes/cadastrar-cliente
+ng g m components/clientes/cadastrar-cliente
+
+ng g c components/home/header 
+ng g c components/home/footer
+
+ng g c components/fornecedores/cadastrar-fornecedor
+ng g c components/fornecedores/listar-fornecedores
+
+ng g c components/produtos/cadastrar-produto
+ng g c components/produtos/listar-produtos
+
+ng g c components/pedidos/cadastrar-pedido
+ng g c components/pedidos/listar-pedidos
+
+ng g c components/vendas/cadastrar-venda
+ng g c components/vendas/listar-vendas
+
+
+
+
+
+
+
+
+
+
+
+
 # FrontendAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
