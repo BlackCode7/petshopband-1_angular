@@ -1,7 +1,7 @@
 nome da branch principal >>> PetShopBand
 
-ng g c components/home/header 
-ng g c components/home/footer
+ng g c components/template/header 
+ng g c components/template/footer
 
 ###########################################
 criando components / services / modules
