@@ -12,6 +12,7 @@ import { ListarPedidosComponent } from './components/pedidos/listar-pedidos/list
 import { CadastrarPedidoComponent } from './components/pedidos/cadastrar-pedido/cadastrar-pedido.component';
 import { ListarVendasComponent } from './components/vendas/listar-vendas/listar-vendas.component';
 import { CadastrarVendaComponent } from './components/vendas/cadastrar-venda/cadastrar-venda.component';
+import { HomeComponent } from './components/home/home.component';
 
 // Voltar na Aula 13
 // https://www.youtube.com/watch?v=0PvPXaFT6lY
@@ -19,11 +20,15 @@ import { CadastrarVendaComponent } from './components/vendas/cadastrar-venda/cad
 
 const routes: Routes = [
   
+  // Aqui seria o componente de autenticação
   { path:'', component: UsuariosComponent},
+
+  { path:'home', component: HomeComponent}, //Entra na home
 
   { path:'produtos', component: ListarProdutosComponent},
   { path:'produtos/cadastrar-produto', component: CadastrarProdutoComponent},
 
+  
   { path:'clientes', component: ListarClientesComponent},
   { path:'clientes/cadastrar-cliente', component: CadastrarClienteComponent},
 
@@ -31,7 +36,7 @@ const routes: Routes = [
   { path:'fornecedores/cadastrar-fornecedor', component: CadastrarFornecedorComponent},
 
   { path:'pedidos', component: ListarPedidosComponent},
-  { path:'pedidos/cadastar-padido', component: CadastrarPedidoComponent},
+  { path:'pedidos/cadastar-pedido', component: CadastrarPedidoComponent},
 
   { path:'vendas', component: ListarVendasComponent},
   { path:'vendas/cadastrar-venda', component: CadastrarVendaComponent}

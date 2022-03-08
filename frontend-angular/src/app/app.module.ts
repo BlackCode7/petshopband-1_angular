@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,12 +17,15 @@ import { HeaderComponent } from './components/template/header/header.component';
 import { CadastrarVendaComponent } from './components/vendas/cadastrar-venda/cadastrar-venda.component';
 import { ListarVendasComponent } from './components/vendas/listar-vendas/listar-vendas.component';
 import { HomeComponent } from './components/home/home.component';
+import { ListarClientesModule } from './components/clientes/listar-clientes/listar-clientes.module';
+import { ListarClientesComponent } from './components/clientes/listar-clientes/listar-clientes.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    ListarClientesComponent,
     CadastrarClienteComponent,
     CadastrarFornecedorComponent,
     ListarFornecedoresComponent,
@@ -40,9 +42,11 @@ import { HomeComponent } from './components/home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ListarClientesModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
