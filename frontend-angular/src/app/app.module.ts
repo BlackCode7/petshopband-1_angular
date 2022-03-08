@@ -20,7 +20,12 @@ import { HomeComponent } from './components/home/home.component';
 import { ListarClientesModule } from './components/clientes/listar-clientes/listar-clientes.module';
 import { ListarClientesComponent } from './components/clientes/listar-clientes/listar-clientes.component';
 
+// Configuração para abrasileirar datas e moedas no angular
+import { LOCALE_ID} from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -45,7 +50,9 @@ import { ListarClientesComponent } from './components/clientes/listar-clientes/l
     AppRoutingModule,
     ListarClientesModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt-BR'},
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
