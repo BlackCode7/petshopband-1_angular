@@ -36,7 +36,7 @@ const routes: Routes = [
   { path:'fornecedores/cadastrar-fornecedor', component: CadastrarFornecedorComponent},
 
   { path:'pedidos', component: ListarPedidosComponent},
-  { path:'pedidos/cadastar-pedido', component: CadastrarPedidoComponent},
+  { path:'pedidos/cadastrar-pedido', component: CadastrarPedidoComponent},
 
   { path:'vendas', component: ListarVendasComponent},
   { path:'vendas/cadastrar-venda', component: CadastrarVendaComponent}

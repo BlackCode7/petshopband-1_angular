@@ -1,32 +1,50 @@
 <app-header></app-header>
 
-<h1 class="my-3 text-primary">
 
-    Lista de Produtos PetShopBand
-
-    <div class="position-relative">
-        <button type="button" class="btn btn-success mt-2 ">Cadastrar</button>
+<div class="container" style="padding: 1em">
+    <h1 class="my-3 text-primary">
+        Lista de Produtos PetShopBand
+        <button type="button" class="btn btn-success mt-2 float-rigth align-text-top"
+        routerLink="/produtos/cadastrar-produto"
+        >Cadastrar</button>
+    </h1>
+    
+    <div class="card shadow">
+        <table class="table table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th>Id Produto</th>
+                    <th>Nome</th>
+                    <th>Fabricante</th>
+                    <th>Data Validade</th>
+                    <th>Descrição</th>
+                    <th>Valor Custo</th>
+                    <th>Valor Venda</th>
+                    <th>Editar/Deletar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Emolitam</td>
+                    <td>Emolitanium</td>
+                    <td>20/10/2020</td>
+                    <td>Aumento de imunidade</td>
+                    <td>R$ 15,00</td>
+                    <td>R$ 46,00</td>    
+                    <td>
+                        <button type="button" class="btn btn-warning">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger ml-2" style="margin-left: 3px;">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </button>
+                    </td>    
+                </tr>               
+            </tbody>
+        </table>
     </div>
-
-</h1>
-
-<div class="card shadow">
-
-    <table class="table-responsive table-striped">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Nome</th>
-                <th>Fabricante</th>
-                <th>Data Validade</th>
-                <th>Descrição</th>
-                <th>Valor Custo</th>
-                <th>Valor Venda</th>
-            </tr>
-        </thead>
-    </table>
-
-
 </div>
+
 
 <app-footer></app-footer>

@@ -1,1 +1,44 @@
-<p>listar-vendas works!</p>
+<app-header></app-header>
+
+
+<div class="container" style="padding: 1em">
+    <h1 class="my-3 text-primary">
+        Listagem de Vendas PetShopBand
+        <button type="button" class="btn btn-success mt-2 float-rigth align-text-top"
+        routerLink="/home"
+        >Cadastrar</button>
+    </h1>
+    
+    <div class="card shadow">
+        <table class="table table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th>Id Pedido</th>
+                    <th>Nome Produto</th>
+                    <th>Data Venda</th>
+                    <th>Quantidade(cx)</th>
+                    <th>Editar/Deletar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Emolitan</td>
+                    <td>20/03/2020</td>                    
+                    <td>120</td>
+                    <td>
+                        <button type="button" class="btn btn-warning">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger ml-2" style="margin-left: 3px;">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </button>
+                    </td>    
+                </tr>               
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<app-footer></app-footer>
