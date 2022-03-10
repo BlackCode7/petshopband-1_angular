@@ -28,7 +28,14 @@
           <label for="exampleInputPassword1" class="form-label">Password</label>
           <input type="password" class="form-control" id="exampleInputPassword1">
         </div>
-    
+
+        <!--Aplicar mensagens de erro caso o usuário digite senhas erradas ou login errado!-->
+            <span *ngIf="login; else elseBlock" class="badge badge-danger">Sua password ou senha estão incorretas! Tente novamente!</span>  
+            <ng-template #elseBlock>
+                <span class="badge badge-danger">Login efetuado com sucesso!</span>
+            </ng-template>                 
+        <!--Aplicar mensagens de erro caso o usuário digite senhas erradas ou login errado!-->
+
      
         <div class="position-relative" >
             <button type="submit" 

@@ -1,3 +1,5 @@
+##### Comandos para criação dos componentes
+
 nome da branch principal >>> PetShopBand
 
 ng g c components/template/header 
@@ -33,8 +35,18 @@ ng g c components/pedidos/listar-pedidos
 ng g c components/vendas/cadastrar-venda
 ng g c components/vendas/listar-vendas
 
+------------------------------------------------
 
+##### *ngIf - condicional if / else / elseBlock #elseBlock 
 
+        arquivo.html
+        public login: boolean = false;  
+
+        arquivocomponent.ts
+        <!--Aplicar mensagens de erro caso o usuário digite senhas erradas ou login errado!-->
+            <span *ngIf="login; else elseBlock" class="badge badge-danger">Sua password ou senha estão incorretas! Tente novamente!</span>  
+            <ng-template #elseBlock>Login efetuado com sucesso!</ng-template>                 
+        <!--Aplicar mensagens de erro caso o usuário digite senhas erradas ou login errado!-->
 
 
 

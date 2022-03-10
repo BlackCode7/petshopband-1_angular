@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuariosComponent implements OnInit {
 
+  public login: boolean = true;
+  loginLogout(): void{
+    this.login = true;
+  };
+  
   constructor() { }
 
   ngOnInit(): void {
