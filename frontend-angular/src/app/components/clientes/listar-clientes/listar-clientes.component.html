@@ -21,12 +21,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Alberto Martins</td>
-                    <td>Rua Albert Aistain, nº 21</td>
-                    <td>AlbertoMartins@Alberto.com</td>
-                    <td>99021-5568</td> 
+                <tr *ngFor="let cli of listaClientes">
+                    <td>{{ cli.id }}</td>
+                    <td>{{ cli.nome }}</td>
+                    <td>{{ cli.endereco }}</td>
+                    <td>{{ cli.email }}</td>
+                    <td>{{ cli.telefone }}</td> 
                     <td>
                         <button type="button" class="btn btn-warning">
                             <i class="fa fa-pencil" aria-hidden="true"></i>

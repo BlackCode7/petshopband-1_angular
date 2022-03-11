@@ -15,14 +15,16 @@
                     <th>Id Pedido</th>
                     <th>Item</th>
                     <th>Data Pedido</th>
+                    <th>Quantidade</th>
                     <th>Editar/Deletar</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Emolitan</td>
-                    <td>20/03/2020</td>
+                <tr *ngFor="let pedi of listaPedidos">
+                    <td>{{ pedi.id}}</td>
+                    <td>{{ pedi.item }}</td>
+                    <td>{{ pedi.dataPedido }}</td>
+                    <td>{{ pedi.quantidade }}</td>
                     <td>
                         <button type="button" class="btn btn-warning">
                             <i class="fa fa-pencil" aria-hidden="true"></i>

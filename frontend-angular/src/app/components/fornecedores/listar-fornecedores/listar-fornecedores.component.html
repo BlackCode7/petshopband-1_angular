@@ -23,13 +23,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Fornecedor Emolitan</td>
-                    <td>emolitanium@emolitanium.com</td>
-                    <td>21-99856-4477</td>
-                    <td>11112222333659</td> 
-                    <td>20/03/2020</td>
+                <tr *ngFor="let fornec of listaFornecedores">
+                    <td>{{ fornec.id }}</td>
+                    <td>{{ fornec.nome }}</td>
+                    <td>{{ fornec.email }}</td>
+                    <td>{{ fornec.telefone }}</td>
+                    <td>{{ fornec.cnpj }}</td> 
+                    <td>{{ fornec.datCadastro }}</td>
                     <td>
                         <button type="button" class="btn btn-warning">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
