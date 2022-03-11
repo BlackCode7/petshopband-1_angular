@@ -49,8 +49,52 @@ ng g c components/vendas/listar-vendas
         <!--Aplicar mensagens de erro caso o usuário digite senhas erradas ou login errado!-->
 
 
+#### Aula 21 - Arrays, Objetos, for e ngFor no Angular.
 
+    //listas - esse é um tipo string por causa do [] ---> Depois é necessário
+    // Jogar ele dentro do construtor
 
+    ------------------------------------------------------------
+    listaStrings: string[] = ['primeiro', 'segundo', 'terceiro'];
+    // Contagem de itens em uma lista com for(){} - inicio no construtor
+
+    for (let item of this.listaString){
+      console.log(item);
+    }   
+    -------------------------------------------------------------
+    ListaNumeros: number[] = [ 12, 3, 21, 4, 32, 33, 44, 34]
+    // Contagem da listagem de números - inicio no construtor 
+    for(const item of this.ListaNumeros){
+      console.log(item);
+    }
+    -------------------------------------------------------------
+    // Criando uma lista de objetos e iterando sobre ela - component.ts
+    listaProdutos: any[] = [
+        {nome:'Emolitan1', fabricante: 'Emolitanium', dataValidade: '01/01/2023', descricao:"Aumento de imunidade", valorCusto: 12.03, valorVenda: 46.99, id:1},
+        {nome:'BayPet1', fabricante: 'BayPetPluz', dataValidade: '01/01/2024', descricao:"Aumento de imunidade", valorCusto: 12.04, valorVenda: 41.99, id:2},
+        {nome:'Mdrow1', fabricante: 'Mdrow', dataValidade: '01/01/2025', descricao:"Aumento de imunidade", valorCusto: 12.05, valorVenda: 37.99, id:3}
+    ]
+
+    // component.html - iterando em uma tabela com os itens da lista de objetos
+    <tbody>
+        <tr *ngFor="let prod of listaProdutos">
+            <td>{{ prod.id }}</td>
+            <td>{{ prod.nome }}</td>
+            <td>{{ prod.fabricante }}</td>
+            <td>{{ prod.dataValidade | date: "shortDate" }}</td>
+            <td>{{ prod.descricao }}</td>
+            <td>{{ prod.valorCusto | currency: "BRL" }}</td>
+            <td>{{ prod.valorVenda | currency: "BRL" }}</td>    
+            <td>
+                <button type="button" class="btn btn-warning">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btn btn-danger ml-2" style="margin-left: 3px;">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </button>
+            </td>    
+        </tr>               
+    </tbody>
 
 
 

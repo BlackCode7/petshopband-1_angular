@@ -24,14 +24,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Emolitam</td>
-                    <td>Emolitanium</td>
-                    <td>20/10/2020</td>
-                    <td>Aumento de imunidade</td>
-                    <td>R$ 15,00</td>
-                    <td>R$ 46,00</td>    
+                <tr *ngFor="let prod of listaProdutos">
+                    <td>{{ prod.id }}</td>
+                    <td>{{ prod.nome }}</td>
+                    <td>{{ prod.fabricante }}</td>
+                    <td>{{ prod.dataValidade | date: "shortDate" }}</td>
+                    <td>{{ prod.descricao }}</td>
+                    <td>{{ prod.valorCusto | currency: "BRL" }}</td>
+                    <td>{{ prod.valorVenda | currency: "BRL" }}</td>    
                     <td>
                         <button type="button" class="btn btn-warning">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
