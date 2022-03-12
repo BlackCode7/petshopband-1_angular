@@ -1,5 +1,81 @@
 <app-header></app-header>
 
-<h1>Cadastar Produtos</h1>
+<div class="container" style="padding: 1em">
+    <h1 class="my-3 text-primary">Cadastar Produtos</h1>
+    <div class="card shadow">
+        <form class="m-3">
+            
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="datavalidade">Data de Validade</label>
+                        <input type="date" class="form-control" id="datavalidade">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="nome">Nome do Produto</label>
+                        <input type="text" class="form-control" placeholder="Digite o nome do Produto" id="nome">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="fabricante">Nome do fabricante</label>
+                        <input type="text" class="form-control" placeholder="Digite o nome do fabricante" id="fabricante">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <input type="text" class="form-control" placeholder="Digite a descrição do produto" id="descricao" id="descricao">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="descricao">Valor de Custo</label>
+                        <input type="number" class="form-control" id="valorCusto" placeholder="0.00">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="descricao">Valor de Venda</label>
+                        <input type="number" class="form-control" id="valorVenda" placeholder="0.00">
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="btn btn-default" routerLink="/produtos">
+                        Voltar
+                    </button>                    
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-success" style="margin-left: 34em;">
+                        salvar
+                    </button>
+                </div>
+            </div>
+           
+
+        </form>
+    </div>
+</div>
+
 
 <app-footer></app-footer>
