@@ -36,7 +36,11 @@ ng g c components/vendas/cadastrar-venda
 ng g c components/vendas/listar-vendas
 
 ------------------------------------------------
+criando components reutilizaveis
 
+ng g c shared/components/card-produto --module=shared
+
+------------------------------------------------
 ##### *ngIf - condicional if / else / elseBlock #elseBlock 
 
         arquivo.html
