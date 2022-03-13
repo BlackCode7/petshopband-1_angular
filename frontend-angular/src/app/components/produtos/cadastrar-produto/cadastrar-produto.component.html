@@ -9,7 +9,10 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="datavalidade">Data de Validade</label>
-                        <input type="date" class="form-control" id="datavalidade">
+                        <input type="date" 
+                        class="form-control" 
+                        id="datavalidade"
+                        name="data-validade" [(ngModel)]="validade">
                     </div>
                 </div>
             </div>
@@ -18,7 +21,9 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="nome">Nome do Produto</label>
-                        <input type="text" class="form-control" placeholder="Digite o nome do Produto" id="nome">
+                        <input type="text" class="form-control" 
+                        placeholder="Digite o nome do Produto" id="nome"
+                        name="nome-produto" [(ngModel)]="nome">
                     </div>
                 </div>
             </div>
@@ -27,7 +32,9 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="fabricante">Nome do fabricante</label>
-                        <input type="text" class="form-control" placeholder="Digite o nome do fabricante" id="fabricante">
+                        <input type="text" class="form-control" 
+                        placeholder="Digite o nome do fabricante" id="fabricante"
+                        name="nome-fabricante" [(ngModel)]="fabricante">
                     </div>
                 </div>
             </div>
@@ -36,7 +43,9 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="descricao">Descrição</label>
-                        <input type="text" class="form-control" placeholder="Digite a descrição do produto" id="descricao" id="descricao">
+                        <input type="text" class="form-control" 
+                        placeholder="Digite a descrição do produto" id="descricao" 
+                        name="descr-produto" [(ngModel)]="descricao">
                     </div>
                 </div>
             </div>
@@ -45,14 +54,18 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="descricao">Valor de Custo</label>
-                        <input type="number" class="form-control" id="valorCusto" placeholder="0.00">
+                        <input type="number" class="form-control" id="valorCusto" 
+                        placeholder="0.00"
+                        name="valor-custo" [(ngModel)]="valorCusto">
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="descricao">Valor de Venda</label>
-                        <input type="number" class="form-control" id="valorVenda" placeholder="0.00">
+                        <input type="number" class="form-control" id="valorVenda" 
+                        placeholder="0.00"
+                        name="valor-venda" [(ngModel)]="valorVenda">
                     </div>
                 </div>
             </div>
@@ -61,19 +74,27 @@
             
             <div class="row">
                 <div class="col-md-6">
-                    <button class="btn btn-default" routerLink="/produtos">
+                    <button class="btn btn-primary" routerLink="/produtos">
                         Voltar
                     </button>                    
                 </div>
                 <div class="col-md-6">
-                    <button class="btn btn-success" style="margin-left: 34em;">
+                    <button class="btn btn-success" (click)="salvarProdutoPost()">
                         salvar
                     </button>
                 </div>
             </div>
-           
-
         </form>
+
+        <!-- <div class="card">
+            <p>Nome:{{nome}}</p>
+            <p>Fabricante:{{fabricante}}</p>
+            <p>Validade:{{validade}}</p>
+            <p>Descricao:{{descricao}}</p>
+            <p>ValorCusto:{{valorCusto}}</p>
+            <p>ValorVenda:{{valorVenda}}</p>
+        </div> -->
+
     </div>
 </div>
 

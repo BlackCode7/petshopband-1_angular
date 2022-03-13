@@ -24,6 +24,7 @@ import { ListarClientesComponent } from './components/clientes/listar-clientes/l
 import { LOCALE_ID} from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { FormsModule } from '@angular/forms';
 
 registerLocaleData(localePt);
 
@@ -48,7 +49,8 @@ registerLocaleData(localePt);
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ListarClientesModule
+    ListarClientesModule,
+    FormsModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR'},

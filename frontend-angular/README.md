@@ -96,6 +96,49 @@ ng g c components/vendas/listar-vendas
         </tr>               
     </tbody>
 
+#### Aula 23 - Data bindings - Two way e event
+    É quando podemos injetar dados nos nossos formularios ou enviar dados do formuçário para o typescript
+
+    -------------------------------------
+    component.html
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="descricao">Valor de Venda</label>
+            <input type="number" class="form-control" id="valorVenda" placeholder="0.00" 
+            
+            name="valor-venda" [(ngModel)]="valorVenda">
+            
+            <!-- 
+            É necessário ter a propriedade name="" e a propriedade [(ngModel)]="variavel que esta no typescript" 
+            para que o Two-Way DataBinding funcione
+            -->
+        </div>
+    </div>
+    <!-- Definindo a função (click)="salvarProduto()" -->
+    <button class="btn btn-success" (click)="salvarProduto()">
+        salvar
+    </button>
+    -------------------------------------
+    component.ts
+    // Definindo variaveis
+    nome?: string;
+    fabricante?: string;
+    validade?: string;
+    descricao?: string;
+    valorCusto?: number;
+    valorVenda?: number;
+
+    // Definição de funções
+      salvarProduto():void{
+          console.log('Nome', this.nome);
+          console.log('Fabricante', this.fabricante);
+          console.log('Validade', this.validade);
+          console.log('Descrição', this.descricao);
+          console.log('Valor Custo', this.valorCusto);
+          console.log('Valor Venda', this.valorVenda);
+          alert('Salvo com sucesso!');
+      }
+
 
 
 
