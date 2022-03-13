@@ -25,6 +25,7 @@ import { LOCALE_ID} from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
 
 registerLocaleData(localePt);
 
@@ -46,11 +47,13 @@ registerLocaleData(localePt);
     UsuariosComponent,
     HomeComponent
   ],
+  // Exportando aqui o modulo SharedModule para que possa ser usado em outros modulos 
   imports: [
     BrowserModule,
     AppRoutingModule,
     ListarClientesModule,
-    FormsModule
+    FormsModule,
+    SharedModule 
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR'},

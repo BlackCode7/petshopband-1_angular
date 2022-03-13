@@ -1,50 +1,12 @@
-
-
 <app-header></app-header>
 
-<div >
-
-    <div class=" navbar-header">     
-        <h4> Seja Bem-Vindo ao PetShopBand ! </h4>
-        <p> Temos tudo o que o seu pet precisa pra ser feliz! </p>
-    </div>
-
-    <div class="col justify-content-center " style="display:flex; justify-content:center; padding: 10px" >
-        
-        <div class="row g-col-2">
-            <img style="width: 320px; height: 556px; margin-left: 10px" src="assets/img/Rotwailler.jpg" />
-        </div>
-        <div class="row g-col-2">
-            <img style="width: 320px; height: 556px; margin-left: 10px" src="assets/img/Rotwailler.jpg" />
-        </div>
-        <div class="row g-col-2">
-            <img style="width: 320px; height: 556px; margin-left: 10px" src="assets/img/Rotwailler.jpg" />
-        </div>
-
-        <div class="card" style="width:18em">
-            <img [src]="foto" alt="..." class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title">
-                    {{ nomeProduto | uppercase}} <!--Uso do pipe do angular-->
-                    <span *ngIf="promocao; else elseBlock" class="badge badge-success" >Promoção</span>
-                    <ng-template #elseBlock>
-                        <span class="badge badge-primary">Aproveite</span>
-                    </ng-template>
-                </h5>
-                <p class="card-text">
-                    Identificação: {{ idProduto | number: '5.0-0'}}
-                    Validade: {{ dataValidade | date: 'dd/MM/yyyy'}}
-                </p>  <!-- Pipe angular // | number: '5.0-32'-->
-                <a href="#" class="btn btn-primary float-right"> {{ precoProduto | currency: 'BRL'}}</a> <!-- Pipe angular // :'symbol': '1.2-3' -->
-            </div>
-        </div>
-       
-        <!-- <div class="row g-col-2">
-            <app-usuarios></app-usuarios>
-        </div> -->
-        
-    </div>
-
-</div>
+<app-card-produto
+    [dataValidade]="dataValidade"
+    [precoProduto]="precoProduto"
+    [promocao]="promocao"
+    [idProduto]="idProduto"    
+    [nomeProduto]="nomeProduto"
+    [foto]="foto"
+></app-card-produto>
 
 <app-footer></app-footer>

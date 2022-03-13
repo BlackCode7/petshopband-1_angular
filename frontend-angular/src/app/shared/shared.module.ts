@@ -10,6 +10,13 @@ import { CardProdutoComponent } from './components/card-produto/card-produto.com
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [ CardProdutoComponent]
 })
 export class SharedModule { }
+
+/**
+ * Preciso exportar o sharedModule para que possa ser
+ * usado em outros  modulos
+ * 
+ */
