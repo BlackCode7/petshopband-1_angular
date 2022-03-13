@@ -1,1 +1,44 @@
-<p>listar-clientes works!</p>
+<app-header></app-header>
+
+<div class="container" style="padding: 1em">
+    <h1 class="my-3 text-primary">
+        Lista de Clientes PetShopBand
+        <button type="button" class="btn btn-success mt-2 float-rigth align-text-top"
+        routerLink="/clientes/cadastrar-cliente"
+        >Cadastrar</button>
+    </h1>
+    
+    <div class="card shadow">
+        <table class="table table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th>Id Cliente</th>
+                    <th>Nome</th>
+                    <th>endereço</th>
+                    <th>e-mail</th>
+                    <th>telefone</th>
+                    <th>Editar/Deletar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cli of listaClientes">
+                    <td>{{ cli.id }}</td>
+                    <td>{{ cli.nome }}</td>
+                    <td>{{ cli.endereco }}</td>
+                    <td>{{ cli.email }}</td>
+                    <td>{{ cli.telefone }}</td> 
+                    <td>
+                        <button type="button" class="btn btn-warning">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger ml-2" style="margin-left: 3px;">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </button>
+                    </td>    
+                </tr>               
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,49 @@
+<form>
+    
+    <div class="border border-primary" style="margin-left:1em;
+                                        padding:1em; 
+                                        width: 16em;
+                                        height: 556px;
+                                        justify-content:center">
+
+        <div style=" display: flex; flex-direction: column; justify-content: center;">
+            <h4>Acesse o Sistema</h4>
+            <p>PetShopBand</p>
+            <p>Digite suas credênciais!</p>
+        </div>                   
+        
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nome</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">Digite seu nome</div>
+        </div>
+        
+          <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">Digite seu email</div>
+        </div>
+    
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <!--Aplicar mensagens de erro caso o usuário digite senhas erradas ou login errado!-->
+            <span *ngIf="login; else elseBlock" class="badge badge-danger">Sua password ou senha estão incorretas! Tente novamente!</span>  
+            <ng-template #elseBlock>
+                <span class="badge badge-danger">Login efetuado com sucesso!</span>
+            </ng-template>                 
+        <!--Aplicar mensagens de erro caso o usuário digite senhas erradas ou login errado!-->
+
+     
+        <div class="position-relative" >
+            <button type="submit" 
+                    class="btn btn-primary position-absolute top-0 end-0"
+                    routerLink="/home" >Submit
+            </button>
+        </div>
+        
+    </div>    
+
+</form>

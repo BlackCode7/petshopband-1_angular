@@ -1,1 +1,94 @@
-<p>cadastrar-fornecedor works!</p>
+<app-header></app-header>
+
+<div class="container" style="padding: 1em">
+    <h1 class="my-3 text-primary">Cadastar Fornecedores PetShopBand</h1>
+    <div class="card shadow">
+        <form class="m-3">
+            
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="datavalidade">Nome do fornecedor</label>
+                        <input type="text" 
+                        class="form-control" 
+                        id="nomefornecedores"
+                        name="nome-fornecedores" [(ngModel)]="nome">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="nome">E-mail do fornecedor</label>
+                        <input type="text" 
+                        class="form-control"
+                        id="emailfornecedores"
+                        name="email-fornecedores" [(ngModel)]="email">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="fabricante">Telefone do fornecedor</label>
+                        <input type="text" class="form-control" 
+                        id="telefonefornecedor"
+                        name="telefone-fornecedor" [(ngModel)]="telefone">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="descricao">CNPJ</label>
+                        <input type="text" class="form-control" 
+                        id="cnpjfornecedor" 
+                        name="cnpj-fornecedor" [(ngModel)]="cnpj">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="descricao">Data de cadastro no sistema</label>
+                        <input type="date" class="form-control" id="datacadastro" 
+                        placeholder="0.00"
+                        name="data-cadastro" [(ngModel)]="dataCadastro">
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="btn btn-primary" routerLink="/fornecedores">
+                        Voltar
+                    </button>                    
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-success" (click)="salvarFornecedoresPost()">
+                        salvar
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- <div class="card">
+            <p>Nome:{{nome}}</p>
+            <p>Fabricante:{{fabricante}}</p>
+            <p>Validade:{{validade}}</p>
+            <p>Descricao:{{descricao}}</p>
+            <p>ValorCusto:{{valorCusto}}</p>
+            <p>ValorVenda:{{valorVenda}}</p>
+        </div> -->
+
+    </div>
+</div>
+
+
+<app-footer></app-footer>

@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarVendasComponent implements OnInit {
 
+  listaVendas: any[] = [
+    {id:1, dataVenda: '01/01/2020', quantidade: 13}
+  ]
+
   constructor() { }
 
   ngOnInit(): void {

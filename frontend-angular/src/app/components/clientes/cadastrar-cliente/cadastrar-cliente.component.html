@@ -1,1 +1,102 @@
-<p>cadastrar-cliente works!</p>
+<app-header></app-header>
+
+<div class="container" style="padding: 1em">
+    <h1 class="my-3 text-primary">Cadastar Clientes PetShopBand</h1>
+    <div class="card shadow">
+        <form class="m-3">
+            
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="datavalidade">Nome do Cliente</label>
+                        <input type="text" 
+                        class="form-control" 
+                        id="nomeCliente"
+                        name="nome-cliente" [(ngModel)]="nome">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="nome">Endereço do Cliente</label>
+                        <input type="text" class="form-control" 
+                        placeholder="Digite o endereço do cliente" 
+                        id="enderecoCliente"
+                        name="endereco-cliente" [(ngModel)]="endereco">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="fabricante">E-mail</label>
+                        <input type="text" class="form-control" 
+                        placeholder="Digite o E-mail" id="emailCliente"
+                        name="email-cliente" [(ngModel)]="email">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="descricao">Telefone</label>
+                        <input type="text" class="form-control" 
+                        placeholder="Digite o telefone" id="telefoneCliente" 
+                        name="telefone-cliente" [(ngModel)]="telefone">
+                    </div>
+                </div>
+            </div>
+            <!-- <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="descricao">Valor de Custo</label>
+                        <input type="number" class="form-control" id="valorCusto" 
+                        placeholder="0.00"
+                        name="valor-custo" [(ngModel)]="valorCusto">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="descricao">Valor de Venda</label>
+                        <input type="number" class="form-control" id="valorVenda" 
+                        placeholder="0.00"
+                        name="valor-venda" [(ngModel)]="valorVenda">
+                    </div>
+                </div>
+            </div> -->
+
+            <br>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="btn btn-primary" routerLink="/clientes">
+                        Voltar
+                    </button>                    
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-success" (click)="salvarClientePost()">
+                        salvar
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- <div class="card">
+            <p>Nome:{{nome}}</p>
+            <p>Fabricante:{{fabricante}}</p>
+            <p>Validade:{{validade}}</p>
+            <p>Descricao:{{descricao}}</p>
+            <p>ValorCusto:{{valorCusto}}</p>
+            <p>ValorVenda:{{valorVenda}}</p>
+        </div> -->
+
+    </div>
+</div>
+
+<app-footer></app-footer>

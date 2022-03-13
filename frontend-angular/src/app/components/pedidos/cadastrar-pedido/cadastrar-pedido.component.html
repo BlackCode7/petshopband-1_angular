@@ -1,1 +1,99 @@
-<p>cadastrar-pedido works!</p>
+<app-header></app-header>
+
+
+
+<div class="container" style="padding: 1em">
+    <h1 class="my-3 text-primary">Cadastro de Pedidos para Clientes</h1>
+    <div class="card shadow">
+        <form class="m-3">
+            
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="datavalidade">Nome do Produto</label>
+                        <input type="text" 
+                        class="form-control" 
+                        id="itemnome"
+                        name="item-nome" [(ngModel)]="itemNome">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="nome">Data do Pedido</label>
+                        <input type="date" class="form-control" 
+                        id="datapedido"
+                        name="data-pedido" [(ngModel)]="dataPedido">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="fabricante">Quantidade</label>
+                        <input type="number" class="form-control" 
+                        id="quantidadeitem"
+                        name="quantidade-item" [(ngModel)]="quantidade">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="descricao">Nome do Cliente</label>
+                        <input type="text" class="form-control" 
+                       id="nomecliente" 
+                        name="nome-cliente" [(ngModel)]="nomeCliente">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="descricao">Endereço entrega Cliente</label>
+                        <input type="number" class="form-control" 
+                        id="endereco-cliente" 
+                        name="endereco-cliente" [(ngModel)]="enderecoCliente">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="descricao">Valor Produto Entrega</label>
+                        <input type="number" class="form-control"
+                        id="valorProdutoEntrega" 
+                        placeholder="0.00"
+                        name="valorproduto-entrega" [(ngModel)]="valorProdutoEntrega">
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="btn btn-primary" routerLink="/pedidos">
+                        Voltar
+                    </button>                    
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-success" (click)="salvarPedidosPost()">
+                        salvar
+                    </button>
+                </div>
+            </div>
+        </form>
+
+      
+
+    </div>
+</div>
+
+
+
+<app-footer></app-footer>
