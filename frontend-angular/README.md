@@ -41,6 +41,17 @@ criando components reutilizaveis
 ng g c shared/components/card-produto --module=shared
 
 ------------------------------------------------
+Criando services
+ng g s services/produtos
+ng g s services/clientes
+ng g s services/fornecedores
+ng g s services/pedidos
+ng g s services/vendas
+------------------------------------------------
+
+rodando o service com json-server
+npx json-server --watch db.json
+------------------------------------------------
 ##### *ngIf - condicional if / else / elseBlock #elseBlock 
 
         arquivo.html
