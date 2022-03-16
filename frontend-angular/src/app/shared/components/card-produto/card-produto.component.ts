@@ -14,6 +14,9 @@ export class CardProdutoComponent implements OnInit {
   @Input() nomeProduto?: string;
   @Input() foto?: string;
 
+  @Input() arrayCard: any[] = [this.dataValidade, this.precoProduto,
+  this.promocao, this.idProduto, this.nomeProduto, this.foto];    
+
   constructor() { }
 
   ngOnInit(): void {
