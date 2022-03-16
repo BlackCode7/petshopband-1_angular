@@ -25,13 +25,14 @@
             </thead>
             <tbody>
                 <tr *ngFor="let prod of listaProdutos">
-                    <td>{{ prod.id }}</td>
-                    <td>{{ prod.nome }}</td>
-                    <td>{{ prod.fabricante }}</td>
+                    <td>{{ prod.idProduto }}</td>
+                    
+                    <td>{{ prod.nomeProduto }}</td>
+                    <td>{{ prod.fabricanteProduto }}</td>
                     <td>{{ prod.dataValidade | date: "shortDate" }}</td>
-                    <td>{{ prod.descricao }}</td>
-                    <td>{{ prod.valorCusto | currency: "BRL" }}</td>
-                    <td>{{ prod.valorVenda | currency: "BRL" }}</td>    
+                    <td>{{ prod.descricaoProduto }}</td>
+                    <td>{{ prod.custoProduto | currency: "BRL" }}</td>
+                    <td>{{ prod.precoProduto | currency: "BRL" }}</td>    
                     <td>
                         <button type="button" class="btn btn-warning">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
