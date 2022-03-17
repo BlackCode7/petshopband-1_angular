@@ -25,8 +25,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let prod of listaProdutos">
-                    <td>{{ prod.idProduto }}</td>
-                    
+                    <td>{{ prod.idProduto }}</td>                    
                     <td>{{ prod.nomeProduto }}</td>
                     <td>{{ prod.fabricanteProduto }}</td>
                     <td>{{ prod.dataValidade | date: "shortDate" }}</td>
