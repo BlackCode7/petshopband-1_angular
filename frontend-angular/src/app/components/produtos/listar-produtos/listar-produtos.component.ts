@@ -9,20 +9,18 @@ import { ProdutosService } from 'src/app/services/produtos.service';
 })
 export class ListarProdutosComponent implements OnInit {
 
-  // Criando listas
-  listaString: string[] = ['Celular', 'NoteBook', 'Tablet', 'impressora'];
-  ListaNumeros: number[] = [ 12, 3, 21, 4, 32, 33, 44, 34]
+  // // Criando listas
+  // listaString: string[] = ['Celular', 'NoteBook', 'Tablet', 'impressora'];
+  // ListaNumeros: number[] = [ 12, 3, 21, 4, 32, 33, 44, 34]
 
-  // Criando objetos
-  objetoModelo = {
-    nome:'Andersdon',
-    idade: 43,
-    email: 'anderson77martins@outlook.com'
-  }
-
+  // // Criando objetos
+  // objetoModelo = {
+  //   nome:'Andersdon',
+  //   idade: 43,
+  //   email: 'anderson77martins@outlook.com'
+  // }
   
   listaProdutos: IProduto[] = [];
-
  
   constructor(
     private produtoService: ProdutosService
@@ -34,8 +32,8 @@ export class ListarProdutosComponent implements OnInit {
 
    /* eu tenho listaProdutos ---> produtoService */
   buscarProdutos(): void{
-    this.produtoService.buscarProdutos().subscribe(retorno => {
-        this.listaProdutos = retorno;
+    this.produtoService.buscarProdutos().subscribe(data => {
+        this.listaProdutos = data;
       });
   }
 
