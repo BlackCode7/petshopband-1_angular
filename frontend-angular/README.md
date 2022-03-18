@@ -42,6 +42,14 @@ ng g c shared/components/card-produto --module=shared
 ng g c shared/components/card-cliente --module=shared
 
 ------------------------------------------------
+code review
+git checkout -b listagem_de_produtos origin/main
+git status
+git add .
+git push origin listagem_de_produtos   
+
+
+------------------------------------------------
 Criando services
 ng g s services/produtos
 ng g s services/clientes
