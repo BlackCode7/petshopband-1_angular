@@ -3,5 +3,7 @@ export interface IFornecedor{
     nomeFornecedores: string;
     emailFornecedores: string;
     telefonefornecedores: string;
+    cnpjFornecedores: string;
+    dataCadastroSistema: Date;
 
 }
