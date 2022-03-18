@@ -39,6 +39,7 @@ ng g c components/vendas/listar-vendas
 criando components reutilizaveis
 
 ng g c shared/components/card-produto --module=shared
+ng g c shared/components/card-cliente --module=shared
 
 ------------------------------------------------
 Criando services
