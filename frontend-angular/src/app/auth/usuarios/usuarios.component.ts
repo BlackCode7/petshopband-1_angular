@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicesService } from './services/services.service';
+import { IUsuarios } from '../model/IUsuarios.model';
 
 @Component({
   selector: 'app-usuarios',
@@ -7,14 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuariosComponent implements OnInit {
 
-  public login: boolean = true;
-  loginLogout(): void{
-    this.login = true;
-  };
+  public usuarios: IUsuarios[] = [];
+
+  // public login: boolean = true;
+  // loginLogout(): void{
+  //   this.login = true;
+  // };
   
-  constructor() { }
+  constructor(
+    private usuariosService: ServicesService
+  ) { }
 
   ngOnInit(): void {
+    this.buscarUsuarios();
   }
+
+  buscarUsuarios(): void{
+    this.usuariosService.buscarUsuarios().subscribe(data => {
+      this.usuarios = data;
+    });
+  }
+
 
 }

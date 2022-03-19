@@ -12,19 +12,36 @@
         <table class="table table-responsive table-striped">
             <thead>
                 <tr>
-                    <th>Id Pedido</th>
-                    <th>Item</th>
-                    <th>Data Pedido</th>
-                    <th>Quantidade</th>
+                    <th>idPedido</th>
+                    <th>idCliente</th>
+                    <th>idFornecedores</th>
+                    <th>idProduto</th>
+                    <th>nomeProduto</th>
+                    <th>nomeCliente</th>
+                    <th>quantidade</th>
+                    <th>dataPedido</th>
+                        
+                    <th>status</th>
+                    <th>dataEntrega</th>
+                    <th>valorTotal</th>
                     <th>Editar/Deletar</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let pedi of listaPedidos">
-                    <td>{{ pedi.id}}</td>
-                    <td>{{ pedi.item }}</td>
-                    <td>{{ pedi.dataPedido }}</td>
+                    <td>{{ pedi.idPedido}}</td>
+                    <td>{{ pedi.idCliente }}</td>
+                    <td>{{ pedi.idFornecedores }}</td>
+                    <td>{{ pedi.idProduto }}</td>
+
+                    <td>{{ pedi.nomeProduto}}</td>
+                    <td>{{ pedi.nomeCliente }}</td>
                     <td>{{ pedi.quantidade }}</td>
+                    <td>{{ pedi.dataPedido }}</td>
+
+                    <td>{{ pedi.dataEntrega }}</td>
+                    <td>{{ pedi.valorTotal }}</td>
+                    <td>{{ pedi.status }}</td>
                     <td>
                         <button type="button" class="btn btn-warning">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
