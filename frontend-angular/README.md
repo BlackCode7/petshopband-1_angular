@@ -58,6 +58,24 @@ ng g s services/pedidos
 ng g s services/vendas
 ------------------------------------------------
 
+
+Criando o guard da aplicação para proteger as rotas
+
+[1:02 pm, 20/03/2022] 
+Anderson Martins: 
+https://www.tektutorialshub.com/angular/angular-canactivate-guard-example/#:~:text=The%20Angular%20CanActivate%20guard%20decides,us%20to%20cancel%20the%20navigation.
+
+[1:09 pm, 20/03/2022] 
+Anderson Martins: 
+https://angular.io/api/router/CanActivate
+
+comando para criar o guard em angular
+ng g guard auth/shared/auth
+
+
+------------------------------------------------
+
+
 rodando o service com json-server
 npx json-server --watch db.json
 ------------------------------------------------

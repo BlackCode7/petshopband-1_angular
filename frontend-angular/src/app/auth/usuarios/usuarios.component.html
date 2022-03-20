@@ -15,18 +15,20 @@
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nome</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">Digite seu nome</div>
+            <div id="nomeUser" class="form-text">Digite seu nome</div>
         </div>
         
           <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">Digite seu email</div>
+          <div id="emailUser" class="form-text">Digite seu email</div>
         </div>
     
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+          <input type="password" class="form-control" id="passwordUser"
+            [(ngModel)]="usuarios"
+          >
         </div>
 
         <!--Aplicar mensagens de erro caso o usuário digite senhas erradas ou login errado!-->
@@ -38,8 +40,8 @@
 
      
         <div class="position-relative" >
-            <button type="submit" 
-                    class="btn btn-primary position-absolute top-0 end-0"
+            <div ></div>
+            <button type="submit" class="btn btn-primary position-absolute top-0 end-0"
                     routerLink="/home" >Submit
             </button>
         </div>

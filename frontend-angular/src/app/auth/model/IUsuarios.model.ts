@@ -3,5 +3,6 @@ export interface IUsuarios{
     perfilUser: string;
     emailUser: string;
     senhaUser: string;
+    passwordUser: string;
 }
 

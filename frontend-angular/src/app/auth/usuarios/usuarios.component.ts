@@ -10,11 +10,13 @@ import { IUsuarios } from '../model/IUsuarios.model';
 export class UsuariosComponent implements OnInit {
 
   public usuarios: IUsuarios[] = [];
+  //public usuariosLogin = new IUsuarios();
 
-  // public login: boolean = true;
-  // loginLogout(): void{
-  //   this.login = true;
-  // };
+  public login: boolean = true;
+
+  loginLogout(): void{
+    this.login = true;
+  };
   
   constructor(
     private usuariosService: ServicesService
@@ -27,7 +29,18 @@ export class UsuariosComponent implements OnInit {
   buscarUsuarios(): void{
     this.usuariosService.buscarUsuarios().subscribe(data => {
       this.usuarios = data;
-    });
+
+      // Verificando se o nome e o perfil estão cadastrados no banco como Anderson e Administrador
+      // if(this.usuarios[0].nomeUser == "Anderson" && this.usuarios[0].perfilUser == "Administrador" &&
+      //    this.usuarios[0].passwordUser == "1234567"){
+
+      //   this.login = true;
+
+      //    } else {
+      //      this.login = false;
+      //    }
+         
+      });
   }
 
 
