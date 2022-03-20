@@ -65,6 +65,7 @@ Criando o guard da aplicação para proteger as rotas
 Anderson Martins: 
 https://www.tektutorialshub.com/angular/angular-canactivate-guard-example/#:~:text=The%20Angular%20CanActivate%20guard%20decides,us%20to%20cancel%20the%20navigation.
 
+
 [1:09 pm, 20/03/2022] 
 Anderson Martins: 
 https://angular.io/api/router/CanActivate
