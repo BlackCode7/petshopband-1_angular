@@ -1,3 +1,8 @@
+#### data 22/03/2022 - instalando libs
+npm install ngx-toastr --save
+npm install @angular/animations --save
+
+
 ##### Comandos para criação dos componentes
 
 nome da branch principal >>> PetShopBand
@@ -5,8 +10,7 @@ nome da branch principal >>> PetShopBand
 ng g c components/template/header 
 ng g c components/template/footer
 
-###########################################
-criando components / services / modules
+#### criando components / services / modules
 -------------------------------------------
 ng g c components/clientes/cadastrar-cliente
 ng g s components/clientes/cadastrar-cliente/services 
@@ -65,6 +69,7 @@ Criando o guard da aplicação para proteger as rotas
 Anderson Martins: 
 https://www.tektutorialshub.com/angular/angular-canactivate-guard-example/#:~:text=The%20Angular%20CanActivate%20guard%20decides,us%20to%20cancel%20the%20navigation.
 
+https://www.youtube.com/watch?v=RQB4Jwkc-c0&t=14s
 
 [1:09 pm, 20/03/2022] 
 Anderson Martins: 
