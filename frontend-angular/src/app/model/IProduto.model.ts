@@ -1,9 +1,10 @@
 export interface IProduto{
-    idProduto: number;
+    idProduto?: number; //Aqui o atributo é opcional com a ?
     nomeProduto: string;
     precoProduto: number;
     dataValidade: Date | string;
     promocao: boolean;
+    quantidadeProduto: number;
 
     fabricanteProduto: string;
     descricaoProduto: string;

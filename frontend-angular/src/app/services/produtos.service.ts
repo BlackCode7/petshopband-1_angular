@@ -18,8 +18,16 @@ export class ProdutosService {
   ) { }
 
   // Método para buscar todos os produtos
-  buscarProdutos(): Observable<IProduto[]>{
+  buscarProdutosGet(): Observable<IProduto[]>{
     return this.http.get<IProduto[]>(this.URL).pipe(
+      map(retorno => retorno),
+      catchError(erro => this.exibeErro(erro))
+    );
+  }
+
+  //Método para cadastrar Produtos
+  cadastrarProdutosPost(produto: IProduto): Observable<IProduto>{
+    return this.http.post<IProduto>(this.URL, produto).pipe(
       map(retorno => retorno),
       catchError(erro => this.exibeErro(erro))
     );

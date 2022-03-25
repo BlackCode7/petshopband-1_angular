@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { IProduto } from 'src/app/model/IProduto.model';
+import { ProdutosService } from 'src/app/services/produtos.service';
 
 @Component({
   selector: 'app-cadastrar-produto',
@@ -7,26 +10,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastrarProdutoComponent implements OnInit {
 
-  nome?: string;
-  fabricante?: string;
-  validade?: string;
-  descricao?: string;
-  valorCusto?: number;
-  valorVenda?: number;
+produto: IProduto = {
+  nomeProduto: '',
+  fabricanteProduto: '',
+  dataValidade: '',
+  descricaoProduto: "",
+  custoProduto: 0,
+  precoProduto: 0,
+  quantidadeProduto: 0,
+  idProduto: 0,
+  promocao: false,
+  foto: ''
+};
 
-  constructor() { }
+  constructor(
+    private produtosService: ProdutosService,
+    //para jogar o usuario na tela de cadastrar depois de ele efetuar o cadastro do produto
+    private router: Router
+
+  ) { }
 
   ngOnInit(): void {
   }
 
   salvarProdutoPost():void{
-    console.log('Nome', this.nome);
-    console.log('Fabricante', this.fabricante);
-    console.log('Validade', this.validade);
-    console.log('Descrição', this.descricao);
-    console.log('Valor Custo', this.valorCusto);
-    console.log('Valor Venda', this.valorVenda);
-    alert('Salvo com sucesso!');
+    this.produtosService.cadastrarProdutosPost(this.produto).subscribe(data => {
+      
+      console.log(data);
+      
+      this.produto = data;
+      //Montando mensagem de erro
+      this.produtosService.exibirMensagemErro(
+        'Sistema',
+        `${this.produto.nomeProduto} foi cadastrado com sucesso. ID: ${this.produto.idProduto}`,
+        'toast-success'
+      );
+
+      //Jogando o usuario para tela de cadastro
+      this.router.navigate(['/produtos']);
+    })
   }
 
 }

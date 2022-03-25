@@ -11,8 +11,7 @@
                         <label for="datavalidade">Data de Validade</label>
                         <input type="date" 
                         class="form-control" 
-                        id="datavalidade"
-                        name="data-validade" [(ngModel)]="validade">
+                        name="validade" [(ngModel)]="produto.dataValidade">
                     </div>
                 </div>
             </div>
@@ -22,8 +21,8 @@
                     <div class="form-group">
                         <label for="nome">Nome do Produto</label>
                         <input type="text" class="form-control" 
-                        placeholder="Digite o nome do Produto" id="nome"
-                        name="nome-produto" [(ngModel)]="nome">
+                        placeholder="Digite o nome do Produto" 
+                        name="nome" [(ngModel)]="produto.nomeProduto">
                     </div>
                 </div>
             </div>
@@ -33,8 +32,19 @@
                     <div class="form-group">
                         <label for="fabricante">Nome do fabricante</label>
                         <input type="text" class="form-control" 
-                        placeholder="Digite o nome do fabricante" id="fabricante"
-                        name="nome-fabricante" [(ngModel)]="fabricante">
+                        placeholder="Digite o nome do fabricante"
+                        name="fabricante" [(ngModel)]="produto.fabricanteProduto">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="fabricante">Quantidade</label>
+                        <input type="number" class="form-control" 
+                        placeholder="0.00"
+                        name="quantidade" [(ngModel)]="produto.quantidadeProduto">
                     </div>
                 </div>
             </div>
@@ -44,8 +54,8 @@
                     <div class="form-group">
                         <label for="descricao">Descrição</label>
                         <input type="text" class="form-control" 
-                        placeholder="Digite a descrição do produto" id="descricao" 
-                        name="descr-produto" [(ngModel)]="descricao">
+                        placeholder="Digite a descrição do produto"  
+                        name="descricao" [(ngModel)]="produto.descricaoProduto">
                     </div>
                 </div>
             </div>
@@ -54,18 +64,25 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="descricao">Valor de Custo</label>
-                        <input type="number" class="form-control" id="valorCusto" 
+                        <input type="number" class="form-control" 
                         placeholder="0.00"
-                        name="valor-custo" [(ngModel)]="valorCusto">
+                        name="valorCusto" [(ngModel)]="produto.custoProduto">
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="descricao">Valor de Venda</label>
-                        <input type="number" class="form-control" id="valorVenda" 
+                        <input type="number" class="form-control"
                         placeholder="0.00"
-                        name="valor-venda" [(ngModel)]="valorVenda">
+                        name="valorVenda" [(ngModel)]="produto.precoProduto">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="descricao">Promoção</label>
+                        <input type="boolean" class="form-control"                        
+                        name="promocao" [(ngModel)]="produto.promocao">
                     </div>
                 </div>
             </div>

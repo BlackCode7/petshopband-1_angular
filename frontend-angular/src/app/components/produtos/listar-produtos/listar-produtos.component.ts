@@ -27,12 +27,12 @@ export class ListarProdutosComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.buscarProdutos();
+    this.buscarProdutosGet();
   }
 
    /* eu tenho listaProdutos ---> produtoService */
-  buscarProdutos(): void{
-    this.produtoService.buscarProdutos().subscribe(data => {
+   buscarProdutosGet(): void{
+    this.produtoService.buscarProdutosGet().subscribe(data => {
         this.listaProdutos = data;
       });
   }
