@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <div class="container" style="padding: 1em">
-    <h1 class="my-3 text-primary">Cadastar Produtos</h1>
+    <h1 class="my-3 text-primary">Cadastro de Produtos PetShopBand</h1>
     <div class="card shadow">
         <form class="m-3">
             
@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label for="nome">Nome do Produto</label>
+                        <label for="nomeP">Nome do Produto</label>
                         <input type="text" class="form-control" 
                         placeholder="Digite o nome do Produto" 
                         name="nome" [(ngModel)]="produto.nomeProduto">
@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <label for="fabricante">Nome do fabricante</label>
+                        <label for="fabricanteP">Nome do fabricante</label>
                         <input type="text" class="form-control" 
                         placeholder="Digite o nome do fabricante"
                         name="fabricante" [(ngModel)]="produto.fabricanteProduto">
@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <label for="fabricante">Quantidade</label>
+                        <label for="quantidadeP">Quantidade</label>
                         <input type="number" class="form-control" 
                         placeholder="0.00"
                         name="quantidade" [(ngModel)]="produto.quantidadeProduto">
@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <label for="descricao">Descrição</label>
+                        <label for="descricaoP">Descrição</label>
                         <input type="text" class="form-control" 
                         placeholder="Digite a descrição do produto"  
                         name="descricao" [(ngModel)]="produto.descricaoProduto">
