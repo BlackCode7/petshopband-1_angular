@@ -4,5 +4,4 @@ export interface ICliente{
     emailCliente: string;
     enderecoCliente: string;
     telefoneCliente: string;
-
 }
