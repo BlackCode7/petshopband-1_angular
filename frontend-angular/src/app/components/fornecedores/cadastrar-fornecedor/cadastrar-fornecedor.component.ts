@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FornecedoresService } from 'src/app/services/fornecedores.service';
+import { IFornecedor } from '../../../model/IFornecedor.model';
 
 @Component({
   selector: 'app-cadastrar-fornecedor',
@@ -7,19 +10,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastrarFornecedorComponent implements OnInit {
 
-  nome?: string;
-  email?: string;
-  telefone?: string;
-  cnpj?: string;
-  dataCadastro?: Date = new Date();
+  fornecedor: IFornecedor = {
+    id: 0,
+    nomeFornecedores: '',
+    emailFornecedores: '',
+    telefonefornecedores: '',
+    cnpjFornecedores: '',
+    dataCadastroSistema: new Date(),
 
-  constructor() { }
+  }  
+
+  constructor(
+    private fornecedoresService: FornecedoresService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
-  salvarFornecedoresPost(): void{
-    console.log(this.nome, this.email, this.telefone, this.cnpj, this.dataCadastro)
+  cadastrar(): void{
+    this.fornecedoresService.cadastrar(this.fornecedor).subscribe(data => {
+
+      console.assert(this.fornecedor.id != null, "ID não encontrado!!!");
+
+      this.fornecedor = data;
+
+      //Montando mensagem de erro
+      this.fornecedoresService.exibirMensagemErro(
+        'Sistema', ` ${ this.fornecedor.nomeFornecedores } foi cadastrado com sucesso. ID: ${ this.fornecedor.id } `,
+        'toast-success'
+      )
+
+      //Jogando usuário para outra rota
+      this.router.navigate(['/fornecedores']);
+    })
   }
 
 }

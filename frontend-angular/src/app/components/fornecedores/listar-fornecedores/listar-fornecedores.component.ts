@@ -18,7 +18,7 @@ export class ListarFornecedoresComponent implements OnInit {
   }
 
   buscarFornecedores(): void{
-    this.fornecedoresService.buscarFornecedores().subscribe(data => {
+    this.fornecedoresService.buscarFornecedoresGet().subscribe(data => {
       this.listaFornecedores = data;  
     })
   }

@@ -12,7 +12,7 @@
                         <input type="text" 
                         class="form-control" 
                         id="nomefornecedores"
-                        name="nome-fornecedores" [(ngModel)]="nome">
+                        name="nome-fornecedores" [(ngModel)]="fornecedor.nomeFornecedores">
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                         <input type="text" 
                         class="form-control"
                         id="emailfornecedores"
-                        name="email-fornecedores" [(ngModel)]="email">
+                        name="email-fornecedores" [(ngModel)]="fornecedor.emailFornecedores">
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                         <label for="fabricante">Telefone do fornecedor</label>
                         <input type="text" class="form-control" 
                         id="telefonefornecedores"
-                        name="telefone-fornecedores" [(ngModel)]="telefone">
+                        name="telefone-fornecedores" [(ngModel)]="fornecedor.telefonefornecedores">
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                         <label for="descricao">CNPJ</label>
                         <input type="text" class="form-control" 
                         id="cnpjfornecedor" 
-                        name="cnpj-fornecedor" [(ngModel)]="cnpj">
+                        name="cnpj-fornecedor" [(ngModel)]="fornecedor.cnpjFornecedores">
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                         <label for="descricao">Data de cadastro no sistema</label>
                         <input type="date" class="form-control" id="datacadastro" 
                         placeholder="0.00"
-                        name="data-cadastro" [(ngModel)]="dataCadastro">
+                        name="data-cadastro" [(ngModel)]="fornecedor.dataCadastroSistema">
                     </div>
                 </div>
             </div>
@@ -71,22 +71,12 @@
                     </button>                    
                 </div>
                 <div class="col-md-6">
-                    <button class="btn btn-success" (click)="salvarFornecedoresPost()">
+                    <button class="btn btn-success" (click)="cadastrar()">
                         salvar
                     </button>
                 </div>
             </div>
         </form>
-
-        <!-- <div class="card">
-            <p>Nome:{{nome}}</p>
-            <p>Fabricante:{{fabricante}}</p>
-            <p>Validade:{{validade}}</p>
-            <p>Descricao:{{descricao}}</p>
-            <p>ValorCusto:{{valorCusto}}</p>
-            <p>ValorVenda:{{valorVenda}}</p>
-        </div> -->
-
     </div>
 </div>
 

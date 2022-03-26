@@ -1,5 +1,5 @@
 export interface IFornecedor{
-    idFornecedores: number;
+    id: number;
     nomeFornecedores: string;
     emailFornecedores: string;
     telefonefornecedores: string;
