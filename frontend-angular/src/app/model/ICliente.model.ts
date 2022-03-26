@@ -1,5 +1,5 @@
 export interface ICliente{
-    idCliente: number;
+    id: number;
     nomeCliente: string;
     emailCliente: string;
     enderecoCliente: string;

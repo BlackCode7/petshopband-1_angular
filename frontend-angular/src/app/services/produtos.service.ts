@@ -27,12 +27,9 @@ export class ProdutosService {
 
   //Método para cadastrar Produtos
   cadastrarProdutosPost(produto: IProduto): Observable<IProduto>{
-
     console.assert(this.URL != null);
-
     return this.http.post<IProduto>(this.URL, produto).pipe(
       map(retorno => retorno),
-      
       catchError(erro => this.exibeErro(erro))
     );
   }
