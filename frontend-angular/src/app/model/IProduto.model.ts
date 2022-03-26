@@ -1,8 +1,8 @@
 export interface IProduto{
-    idProduto?: number; //Aqui o atributo é opcional com a ?
+    id: number; //Aqui o atributo é opcional com a ?
     nomeProduto: string;
     precoProduto: number;
-    dataValidade: Date | string;
+    dataValidade: Date;
     promocao: boolean;
     quantidadeProduto: number;
 
@@ -10,6 +10,6 @@ export interface IProduto{
     descricaoProduto: string;
     custoProduto: number;
 
-    foto: string; // caminho da foto na pasta assets/img/nome_foto.jpg/png
+    foto: string|null; // caminho da foto na pasta assets/img/nome_foto.jpg/png
 
 }
