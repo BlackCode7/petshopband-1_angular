@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpStatusCode } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EMPTY, Observable } from 'rxjs';
 import { IProduto } from '../model/IProduto.model';
@@ -10,7 +10,7 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class ProdutosService {
 
-  private URL: string = 'http://localhost:3000/produtos';
+  private URL: string = 'http://localhost:3000/produtos/';
 
   constructor(
     private http: HttpClient,
@@ -27,8 +27,12 @@ export class ProdutosService {
 
   //Método para cadastrar Produtos
   cadastrarProdutosPost(produto: IProduto): Observable<IProduto>{
+
+    console.assert(this.URL != null);
+
     return this.http.post<IProduto>(this.URL, produto).pipe(
       map(retorno => retorno),
+      
       catchError(erro => this.exibeErro(erro))
     );
   }

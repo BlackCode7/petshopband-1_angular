@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ConnectableObservable } from 'rxjs';
 import { IProduto } from 'src/app/model/IProduto.model';
 import { ProdutosService } from 'src/app/services/produtos.service';
 
@@ -13,14 +14,14 @@ export class CadastrarProdutoComponent implements OnInit {
 produto: IProduto = {
   nomeProduto: '',
   fabricanteProduto: '',
-  dataValidade: '',
-  descricaoProduto: "",
+  dataValidade: new Date(),
+  descricaoProduto: '',
   custoProduto: 0,
   precoProduto: 0,
   quantidadeProduto: 0,
-  idProduto: 0,
+  id: 0,
   promocao: false,
-  foto: ''
+  foto: null
 };
 
   constructor(
@@ -36,13 +37,18 @@ produto: IProduto = {
   salvarProdutoPost():void{
     this.produtosService.cadastrarProdutosPost(this.produto).subscribe(data => {
       
-      console.log(data);
+      console.log(data);   
       
       this.produto = data;
+
+      console.log("RETORNO DOS PRODUTOS >>> ", this.produto)
+      console.assert(this.produto.id != null, "O produto não foi cadastrado!!!")
+      console.assert(this.produto.nomeProduto != null, "O produto não foi cadastrado!!!")
+
       //Montando mensagem de erro
       this.produtosService.exibirMensagemErro(
         'Sistema',
-        `${this.produto.nomeProduto} foi cadastrado com sucesso. ID: ${this.produto.idProduto}`,
+        `${this.produto.nomeProduto} foi cadastrado com sucesso. ID: ${this.produto.id}`,
         'toast-success'
       );
 
@@ -50,5 +56,7 @@ produto: IProduto = {
       this.router.navigate(['/produtos']);
     })
   }
+
+  
 
 }
