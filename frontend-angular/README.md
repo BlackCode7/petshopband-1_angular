@@ -1,3 +1,5 @@
+#### corrigindo falhas
+
 #### data 22/03/2022 - instalando libs
 npm install ngx-toastr --save
 npm install @angular/animations --save
