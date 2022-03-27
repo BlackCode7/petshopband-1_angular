@@ -30,17 +30,13 @@ export class CadastrarFornecedorComponent implements OnInit {
 
   cadastrar(): void{
     this.fornecedoresService.cadastrar(this.fornecedor).subscribe(data => {
-
       console.assert(this.fornecedor.id != null, "ID não encontrado!!!");
-
       this.fornecedor = data;
-
       //Montando mensagem de erro
       this.fornecedoresService.exibirMensagemErro(
         'Sistema', ` ${ this.fornecedor.nomeFornecedores } foi cadastrado com sucesso. ID: ${ this.fornecedor.id } `,
         'toast-success'
       )
-
       //Jogando usuário para outra rota
       this.router.navigate(['/fornecedores']);
     })

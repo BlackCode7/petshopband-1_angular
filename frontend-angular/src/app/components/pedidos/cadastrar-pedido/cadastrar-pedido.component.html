@@ -14,7 +14,7 @@
                         <input type="text" 
                         class="form-control" 
                         id="itemnome"
-                        name="item-nome" [(ngModel)]="itemNome">
+                        name="item-nome" [(ngModel)]="pedidos.nomeProduto">
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                         <label for="nome">Data do Pedido</label>
                         <input type="date" class="form-control" 
                         id="datapedido"
-                        name="data-pedido" [(ngModel)]="dataPedido">
+                        name="data-pedido" [(ngModel)]="pedidos.dataPedido">
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                         <label for="fabricante">Quantidade</label>
                         <input type="number" class="form-control" 
                         id="quantidadeitem"
-                        name="quantidade-item" [(ngModel)]="quantidade">
+                        name="quantidade-item" [(ngModel)]="pedidos.quantidade">
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                         <label for="descricao">Nome do Cliente</label>
                         <input type="text" class="form-control" 
                        id="nomecliente" 
-                        name="nome-cliente" [(ngModel)]="nomeCliente">
+                        name="nome-cliente" [(ngModel)]="pedidos.nomeCliente">
                     </div>
                 </div>
             </div>
@@ -56,9 +56,9 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="descricao">Endereço entrega Cliente</label>
-                        <input type="number" class="form-control" 
+                        <input type="text" class="form-control" 
                         id="endereco-cliente" 
-                        name="endereco-cliente" [(ngModel)]="enderecoCliente">
+                        name="endereco-cliente" [(ngModel)]="pedidos.enderecoCliente">
                     </div>
                 </div>
 
@@ -68,7 +68,7 @@
                         <input type="number" class="form-control"
                         id="valorProdutoEntrega" 
                         placeholder="0.00"
-                        name="valorproduto-entrega" [(ngModel)]="valorProdutoEntrega">
+                        name="valorproduto-entrega" [(ngModel)]="pedidos.valorTotal">
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@
                     </button>                    
                 </div>
                 <div class="col-md-6">
-                    <button class="btn btn-success" (click)="salvarPedidosPost()">
+                    <button class="btn btn-success" (click)="salvarPedidos()">
                         salvar
                     </button>
                 </div>

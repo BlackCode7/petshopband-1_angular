@@ -19,19 +19,15 @@ export class FornecedoresService {
   ) { }
 
   buscarFornecedoresGet(): Observable<IFornecedor[]>{
-
-    console.assert(this.URL != null, "URL não encontrada");
-    
+    console.assert(this.URL != null, "URL não encontrada");    
     return this.http.get<IFornecedor[]>(this.URL).pipe(
       map(retorno => retorno),
       catchError(erro => this.exibeErro(erro))
     );
   }
 
-  cadastrar(fornecedor: IFornecedor): Observable<IFornecedor>{
-    
-    console.assert(this.URL != null, "URL não encontrada");
-    
+  cadastrar(fornecedor: IFornecedor): Observable<IFornecedor>{    
+    console.assert(this.URL != null, "URL não encontrada");    
     return this.http.post<IFornecedor>(this.URL, fornecedor).pipe(
       map(retorno => retorno),
       catchError(erro => this.exibeErro(erro))

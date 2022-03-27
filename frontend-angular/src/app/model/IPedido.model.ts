@@ -1,12 +1,10 @@
 export interface IPedido{
-    idPedido: number;
-    idCliente: number;
-    idFornecedores: number;
-    idProduto: number;
+    id: number;
     nomeProduto: string;
     nomeCliente: string;
     quantidade: number;
     dataPedido: Date;
+    enderecoCliente: string;
     dataEntrega: Date;
     valorTotal: number;
     status: boolean;

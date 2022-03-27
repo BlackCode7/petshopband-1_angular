@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<div class="container" style="padding: 1em">
+<div class="container" style="padding: 10px">
     <h1 class="my-3 text-primary">
         Lista de Pedidos PetShopBand
         <button type="button" class="btn btn-success mt-2 float-rigth align-text-top"
@@ -13,9 +13,6 @@
             <thead>
                 <tr>
                     <th>idPedido</th>
-                    <th>idCliente</th>
-                    <th>idFornecedores</th>
-                    <th>idProduto</th>
                     <th>nomeProduto</th>
                     <th>nomeCliente</th>
                     <th>quantidade</th>
@@ -29,19 +26,17 @@
             </thead>
             <tbody>
                 <tr *ngFor="let pedi of listaPedidos">
-                    <td>{{ pedi.idPedido}}</td>
-                    <td>{{ pedi.idCliente }}</td>
-                    <td>{{ pedi.idFornecedores }}</td>
-                    <td>{{ pedi.idProduto }}</td>
+                    <td>{{ pedi.id}}</td>
 
                     <td>{{ pedi.nomeProduto}}</td>
                     <td>{{ pedi.nomeCliente }}</td>
                     <td>{{ pedi.quantidade }}</td>
                     <td>{{ pedi.dataPedido }}</td>
 
-                    <td>{{ pedi.dataEntrega }}</td>
-                    <td>{{ pedi.valorTotal }}</td>
                     <td>{{ pedi.status }}</td>
+                    <td>{{ pedi.dataEntrega | date  }}</td>
+                    <td>{{ pedi.valorTotal }}</td>
+                    
                     <td>
                         <button type="button" class="btn btn-warning">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
