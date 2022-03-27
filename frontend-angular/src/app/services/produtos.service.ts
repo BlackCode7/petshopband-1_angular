@@ -12,10 +12,8 @@ export class ProdutosService {
 
   private URL: string = 'http://localhost:3000/produtos/';
 
-  constructor(
-    private http: HttpClient,
-    private toastr: ToastrService
-  ) { }
+  constructor( private http: HttpClient,
+               private toastr: ToastrService ) { }
 
   // Método para buscar todos os produtos
   buscarProdutosGet(): Observable<IProduto[]>{
