@@ -19,6 +19,27 @@ export class PedidosService {
   constructor( private toastr: ToastrService,
                private http: HttpClient ) { }
 
+               
+
+// Método para buscar Cliente por id
+buscarPedidosIDGet(id: number): Observable<IPedido>{
+  return this.http.get<IPedido>(`${this.URL}/${id}`).pipe(
+    map(retorno => retorno),
+    catchError(erro => this.exibeErro(erro))
+  );
+} 
+
+//Método para cadastrar Produtos
+cadastrarPedidosPut(pedido: IPedido): Observable<IPedido>{
+  console.assert(this.URL != null, "URL não encontrada!");
+  return this.http.put<IPedido>(`${this.URL}/${pedido.id}`, pedido).pipe(
+    map(retorno => retorno),
+    catchError(erro => this.exibeErro(erro))
+  );
+}
+           
+
+
 /****************************** ClientesService ********************************/ 
   buscarClientes(): Observable<ICliente[]>{
     console.assert(this.URL != null, "URL não encontrada"); 
@@ -58,15 +79,6 @@ export class PedidosService {
       catchError(erro => this.exibeErro(erro))
     );
   }
-
-  atualizarPedido(pedido: IPedido): Observable<IPedido[]>{
-    return this.http.put<IPedido[]>(`${this.URL}/${pedido.id}`, pedido);
-  }
-
-  deletandoPedidos(id: number): Observable<IPedido[]>{
-    return this.http.delete<IPedido[]>(`${this.URL}/${id}`);
-  }
-
 
 
   //Método para chamar a função exibirMensagemErro()

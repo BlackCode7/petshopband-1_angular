@@ -65,8 +65,7 @@ produto: IProduto = {
 
   /** Atualizar Produto */
   cadastrarProdutosPut():void{
-    this.produtosService.cadastrarProdutosPut(this.produto).subscribe(data => {
-      
+    this.produtosService.cadastrarProdutosPut(this.produto).subscribe(data => {      
       console.assert(data != null, "Dados Incorretos por falta de URL !!!");   
       
       this.produto = data; 
@@ -77,7 +76,6 @@ produto: IProduto = {
         `${this.produto.nomeProduto} foi atualizado com sucesso.`,
         'toast-success'
       );
-
       //Jogando o usuario para tela de cadastro
       this.router.navigate(['/produtos']);
     })

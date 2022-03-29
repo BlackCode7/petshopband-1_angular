@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IFornecedor } from 'src/app/model/IFornecedor.model';
 import { IPedido } from 'src/app/model/IPedido.model';
 import { ClientesService } from 'src/app/services/clientes.service';
@@ -44,21 +44,38 @@ export class CadastrarPedidoComponent implements OnInit {
     private router: Router,
     private clientesService: ClientesService,
     private produtosService: ProdutosService,
-    private fornecedoresService: FornecedoresService
+    private fornecedoresService: FornecedoresService,
+    private activateRouter: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    this.atualizarFornecedorPorID();
   }
 
-  //console.assert(this.pedido.id_pedido != null, "ID não encontrado!!!");
+   //Função que popula os dados do cliente nos campos ( ngOnInit )
+   atualizarFornecedorPorID(): void{
+    const id = Number(this.activateRouter.snapshot.paramMap.get('id'));
+    this.pedidosService.buscarPedidosIDGet(id).subscribe(retorno => {
+      this.pedidos = retorno;
+    })
+  }
+
+  // Metodo Put para Atualizar clientes
+  cadastrarPedidosPut(): void{
+    this.pedidosService.cadastrarPedidosPut(this.pedidos).subscribe(data => {
+      this.pedidos = data;
+      console.assert(this.pedidos != null, "Erro ao Atualizar cliente ASSERTION");
+      /* Montando a mensagem de erro */
+      this.pedidosService.exibirMensagemErro('Sistema', 'Pedido atualizado com sucesso', 'toast-success');
+      /* Redirecionando o usuário para tela de listagem */
+      return this.router.navigate(['/pedidos']);
+    })
+  }
 
   salvarPedidos():void{
-    this.pedidosService.salvarPedidos(this.pedidos).subscribe(itemsPedidos => {   
-      
+    this.pedidosService.salvarPedidos(this.pedidos).subscribe(itemsPedidos => {        
       console.log(itemsPedidos, "#@#@#@#@##@#@#");
-
       this.pedidosPP = itemsPedidos;
-
       this.pedidosService.exibirMensagemErro('Sistema', 
           `Pedido número ${this.pedidos.id} foi cadastrado com sucesso. Produto: ${this.pedidos.nomeProduto}, ${this.pedidos.nomeCliente}`, 
           'toast-success'
@@ -66,4 +83,6 @@ export class CadastrarPedidoComponent implements OnInit {
       this.router.navigate(['/pedidos']);
     })
   }
+
+
 }

@@ -8,7 +8,8 @@
         <form class="m-3">
             
             <div class="row">
-                <div class="col">
+
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="datavalidade">Nome do Produto</label>
                         <input type="text" 
@@ -17,21 +18,7 @@
                         name="item-nome" [(ngModel)]="pedidos.nomeProduto">
                     </div>
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label for="nome">Data do Pedido</label>
-                        <input type="date" class="form-control" 
-                        id="datapedido"
-                        name="data-pedido" [(ngModel)]="pedidos.dataPedido">
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col">
+                <div class="col-md-3">
                     <div class="form-group">
                         <label for="fabricante">Quantidade</label>
                         <input type="number" class="form-control" 
@@ -39,10 +26,19 @@
                         name="quantidade-item" [(ngModel)]="pedidos.quantidade">
                     </div>
                 </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="nome">Data do Pedido</label>
+                        <input type="date" class="form-control" 
+                        id="datapedido"
+                        name="data-pedido" [(ngModel)]="pedidos.dataPedido">
+                    </div>
+                </div>
+
             </div>
             <br>
             <div class="row">
-                <div class="col">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="descricao">Nome do Cliente</label>
                         <input type="text" class="form-control" 
@@ -50,9 +46,6 @@
                         name="nome-cliente" [(ngModel)]="pedidos.nomeCliente">
                     </div>
                 </div>
-            </div>
-            <br>
-            <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="descricao">Endereço entrega Cliente</label>
@@ -61,6 +54,9 @@
                         name="endereco-cliente" [(ngModel)]="pedidos.enderecoCliente">
                     </div>
                 </div>
+            </div>
+            <br>
+            <div class="row">               
 
                 <div class="col-md-6">
                     <div class="form-group">
@@ -71,29 +67,49 @@
                         name="valorproduto-entrega" [(ngModel)]="pedidos.valorTotal">
                     </div>
                 </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="descricao">Telefone</label>
+                        <input type="text" class="form-control"
+                        id="telefoneEntrega" 
+                        placeholder="(99)99999-9999"
+                        name="telefone-cliente"> <!-- [(ngModel)]="pedidos.valorTotal"-->
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="descricao">E-mail</label>
+                        <input type="text" class="form-control"
+                        id="emailEntrega" 
+                        placeholder="exemplo@exemplo.com.br"
+                        name="email-cliente"> <!-- [(ngModel)]="pedidos.valorTotal"-->
+                    </div>
+                </div>
+
             </div>
 
             <br>
             
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-1">
                     <button class="btn btn-primary" routerLink="/pedidos">
                         Voltar
                     </button>                    
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-1">
                     <button class="btn btn-success" (click)="salvarPedidos()">
                         salvar
                     </button>
                 </div>
+                <div class="col-md-1">
+                    <button class="btn btn-warning" (click)="cadastrarPedidosPut()">
+                        atualizar
+                    </button>
+                </div>
             </div>
-        </form>
-
-      
+        </form>    
 
     </div>
 </div>
-
-
 
 <app-footer></app-footer>

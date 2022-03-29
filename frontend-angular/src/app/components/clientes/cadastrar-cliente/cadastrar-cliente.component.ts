@@ -40,19 +40,11 @@ export class CadastrarClienteComponent implements OnInit {
   cadastrarClientesPut(): void{
     this.clientesService.cadastrarClientesPut(this.cliente).subscribe(data => {
       this.cliente = data;
-
       console.assert(this.cliente != null, "Erro ao Atualizar cliente ASSERTION");
-
       /* Montando a mensagem de erro */
-      this.clientesService.exibeMensagemErro(
-        'Sistema', 
-        `${this.cliente.nomeCliente} foi Atualizado com sucesse. ID: ${this.cliente.id}`, 
-        'toast-success'
-      );
-
+      this.clientesService.exibeMensagemErro('Sistema', `${this.cliente.nomeCliente} foi Atualizado com sucesse.`, 'toast-success');
       /* Redirecionando o usuário para tela de listagem */
       return this.router.navigate(['/clientes']);
-
     })
   }
 
@@ -60,19 +52,11 @@ export class CadastrarClienteComponent implements OnInit {
   cadastrarClientesPost(): void{
     this.clientesService.cadastrarClientesPost(this.cliente).subscribe(data => {
       this.cliente = data;
-
       console.assert(this.cliente != null, "Erro ao Cadastrar cliente ASSERTION");
-
       /* Montando a mensagem de erro */
-      this.clientesService.exibeMensagemErro(
-        'Sistema', 
-        `${this.cliente.nomeCliente} foi cadastrado com sucesse. ID: ${this.cliente.id}`, 
-        'toast-success'
-      );
-
+      this.clientesService.exibeMensagemErro( 'Sistema', `${this.cliente.nomeCliente} foi cadastrado com sucesse.`, 'toast-success' );
       /* Redirecionando o usuário para tela de listagem */
       return this.router.navigate(['/clientes']);
-
     })
   }
 
