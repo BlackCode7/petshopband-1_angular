@@ -18,6 +18,23 @@ export class ClientesService {
     private http: HttpClient
   ) { }
 
+// Método para buscar Cliente por id
+buscarClientesIDGet(id: number): Observable<ICliente>{
+  return this.http.get<ICliente>(`${this.URL}/${id}`).pipe(
+    map(retorno => retorno),
+    catchError(erro => this.exibeErro(erro))
+  );
+}
+
+//Método para cadastrar Produtos
+cadastrarClientesPut(cliente: ICliente): Observable<ICliente>{
+  console.assert(this.URL != null, "URL não encontrada!");
+  return this.http.put<ICliente>(`${this.URL}/${cliente.id}`, cliente).pipe(
+    map(retorno => retorno),
+    catchError(erro => this.exibeErro(erro))
+  );
+}
+
 buscarClientes(): Observable<ICliente[]>{
   return this.http.get<ICliente[]>(this.URL).pipe(
     map(retorno => retorno),

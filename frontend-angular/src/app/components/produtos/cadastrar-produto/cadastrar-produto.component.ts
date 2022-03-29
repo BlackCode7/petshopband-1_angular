@@ -67,13 +67,9 @@ produto: IProduto = {
   cadastrarProdutosPut():void{
     this.produtosService.cadastrarProdutosPut(this.produto).subscribe(data => {
       
-      console.log(data);   
+      console.assert(data != null, "Dados Incorretos por falta de URL !!!");   
       
-      this.produto = data;
-
-      console.log("RETORNO DOS PRODUTOS >>> ", this.produto)
-      console.assert(this.produto.id != null, "O produto não foi atualizado!!!")
-      console.assert(this.produto.nomeProduto != null, "O produto não foi atualizado!!!")
+      this.produto = data; 
 
       //Montando mensagem de erro
       this.produtosService.exibirMensagemErro(

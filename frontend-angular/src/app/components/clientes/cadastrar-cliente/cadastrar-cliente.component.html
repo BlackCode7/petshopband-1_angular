@@ -54,15 +54,22 @@
             <br>
             
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-1">
                     <button class="btn btn-primary" routerLink="/clientes">
                         Voltar
                     </button>                    
                 </div>
-                <div class="col-md-6">
+
+                <div class="col-md-1">
                     <button class="btn btn-success" (click)="cadastrarClientesPost()">
                         salvar
                     </button>
+                </div>
+
+                <div class="col-md-1">
+                    <button class="btn btn-warning" (click)="cadastrarClientesPut()">
+                        atualizar
+                    </button>                    
                 </div>
             </div>
         </form>

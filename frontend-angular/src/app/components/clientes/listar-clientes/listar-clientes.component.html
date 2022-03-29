@@ -28,7 +28,8 @@
                     <td>{{ cli.emailCliente }}</td>
                     <td>{{ cli.telefoneCliente }}</td> 
                     <td>
-                        <button type="button" class="btn btn-warning">
+                        <button type="button" class="btn btn-warning" 
+                            routerLink="/clientes/atualizar/{{cli.id}}">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
                         </button>
                         <button type="button" class="btn btn-danger ml-2" style="margin-left: 3px;">

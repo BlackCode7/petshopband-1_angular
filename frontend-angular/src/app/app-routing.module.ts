@@ -43,6 +43,9 @@ const routes: Routes = [
 
   //Atualizar Produtos
   { path: 'produtos/atualizar/:id', component: CadastrarProdutoComponent},
+  { path: 'clientes/atualizar/:id', component: CadastrarClienteComponent},
+  { path: 'fornecedores/atualizar/:id', component: CadastrarFornecedorComponent},
+  { path: 'pedidos/atualizar/:id', component: CadastrarPedidoComponent}, 
   
 ];
 
