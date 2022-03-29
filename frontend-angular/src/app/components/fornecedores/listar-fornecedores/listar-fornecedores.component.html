@@ -29,9 +29,10 @@
                     <td>{{ fornec.emailFornecedores }}</td>
                     <td>{{ fornec.telefonefornecedores }}</td>
                     <td>{{ fornec.cnpjFornecedores }}</td> 
-                    <td>{{ fornec.dataCadastroSistema }}</td>
+                    <td>{{ fornec.dataCadastroSistema | date: "shortDate" }}</td>
                     <td>
-                        <button type="button" class="btn btn-warning">
+                        <button type="button" class="btn btn-warning" 
+                            routerLink="/fornecedores/atualizar/{{fornec.id}}"> 
                             <i class="fa fa-pencil" aria-hidden="true"></i>
                         </button>
                         <button type="button" class="btn btn-danger ml-2" style="margin-left: 3px;">

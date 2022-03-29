@@ -18,6 +18,24 @@ export class FornecedoresService {
     private http: HttpClient
   ) { }
 
+  //Atualiza fornecedores
+  cadastrarFornecedoresPut(fornecedor: IFornecedor): Observable<IFornecedor>{
+    console.assert(this.URL != null, "URL não encontrada!");
+    return this.http.put<IFornecedor>(`${this.URL}/${fornecedor.id}`, fornecedor).pipe(
+      map(retorno => retorno),
+      catchError(erro => this.exibeErro(erro))
+    );
+  }
+
+  // Método para buscar produtos por id
+  buscarFornecedoresIDGet(id: number): Observable<IFornecedor>{
+    return this.http.get<IFornecedor>(`${this.URL}/${id}`).pipe(
+      map(retorno => retorno),
+      catchError(erro => this.exibeErro(erro))
+    );
+  }
+
+  //Busca fornecedores
   buscarFornecedoresGet(): Observable<IFornecedor[]>{
     console.assert(this.URL != null, "URL não encontrada");    
     return this.http.get<IFornecedor[]>(this.URL).pipe(

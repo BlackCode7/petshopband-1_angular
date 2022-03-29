@@ -18,7 +18,7 @@
             </div>
             <br>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="nome">E-mail do fornecedor</label>
                         <input type="text" 
@@ -27,21 +27,15 @@
                         name="email-fornecedores" [(ngModel)]="fornecedor.emailFornecedores">
                     </div>
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col">
+                <div class="col-md-2">
                     <div class="form-group">
-                        <label for="fabricante">Telefone do fornecedor</label>
+                        <label for="fabricante">Tel do fornecedor</label>
                         <input type="text" class="form-control" 
                         id="telefonefornecedores"
                         name="telefone-fornecedores" [(ngModel)]="fornecedor.telefonefornecedores">
                     </div>
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col">
+                <div class="col-md-2">
                     <div class="form-group">
                         <label for="descricao">CNPJ</label>
                         <input type="text" class="form-control" 
@@ -49,12 +43,9 @@
                         name="cnpj-fornecedor" [(ngModel)]="fornecedor.cnpjFornecedores">
                     </div>
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-2">
                     <div class="form-group">
-                        <label for="descricao">Data de cadastro no sistema</label>
+                        <label for="descricao">Data de cadastro</label>
                         <input type="date" class="form-control" id="datacadastro" 
                         placeholder="0.00"
                         name="data-cadastro" [(ngModel)]="fornecedor.dataCadastroSistema">
@@ -65,14 +56,19 @@
             <br>
             
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-1">
                     <button class="btn btn-primary" routerLink="/fornecedores">
                         Voltar
                     </button>                    
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-1">
                     <button class="btn btn-success" (click)="cadastrar()">
                         salvar
+                    </button>
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-warning" (click)="cadastrarFornecedoresPut()">
+                        atualizar
                     </button>
                 </div>
             </div>
