@@ -39,7 +39,10 @@ const routes: Routes = [
   { path:'pedidos/cadastrar-pedido', component: CadastrarPedidoComponent},
 
   { path:'vendas', component: ListarVendasComponent},
-  { path:'vendas/cadastrar-venda', component: CadastrarVendaComponent}
+  { path:'vendas/cadastrar-venda', component: CadastrarVendaComponent},
+
+  //Atualizar Produtos
+  { path: 'produtos/atualizar/:id', component: CadastrarProdutoComponent},
   
 ];
 

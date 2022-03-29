@@ -37,9 +37,11 @@
                     <td>{{ prod.precoProduto | currency: "BRL" }}</td>  
                     <td>{{ prod.promocao }}</td>  
                     <td>
-                        <button type="button" class="btn btn-warning">
+                        <button type="button" class="btn btn-warning" 
+                            routerLink="/produtos/atualizar/{{prod.id}}">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
                         </button>
+                        
                         <button type="button" class="btn btn-danger ml-2" style="margin-left: 3px;">
                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                         </button>

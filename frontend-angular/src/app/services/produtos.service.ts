@@ -23,6 +23,28 @@ export class ProdutosService {
     );
   }
 
+  /************************************************************** */
+  /************************************************************** */
+  // Método para buscar produtos por id
+  buscarProdutosIDGet(id: number): Observable<IProduto>{
+    return this.http.get<IProduto>(`${this.URL}/${id}`).pipe(
+      map(retorno => retorno),
+      catchError(erro => this.exibeErro(erro))
+    );
+  }
+
+  //Método para cadastrar Produtos
+  cadastrarProdutosPut(produto: IProduto): Observable<IProduto>{
+    console.assert(this.URL != null, "URL não encontrada!");
+    return this.http.put<IProduto>(`${this.URL}/${produto.id}`, produto).pipe(
+      map(retorno => retorno),
+      catchError(erro => this.exibeErro(erro))
+    );
+  }
+  /************************************************************** */
+  /************************************************************** */
+
+
   //Método para cadastrar Produtos
   cadastrarProdutosPost(produto: IProduto): Observable<IProduto>{
     console.assert(this.URL != null, "URL não encontrada!");

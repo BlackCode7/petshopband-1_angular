@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ConnectableObservable } from 'rxjs';
 import { IProduto } from 'src/app/model/IProduto.model';
 import { ProdutosService } from 'src/app/services/produtos.service';
@@ -27,11 +27,17 @@ produto: IProduto = {
   constructor(
     private produtosService: ProdutosService,
     //para jogar o usuario na tela de cadastrar depois de ele efetuar o cadastro do produto
-    private router: Router
+    private router: Router,
+    private activateRouter: ActivatedRoute
 
   ) { }
 
   ngOnInit(): void {
+    // Constante do método apara atualizar dados por id
+    const id = Number(this.activateRouter.snapshot.paramMap.get('id'));
+    this.produtosService.buscarProdutosIDGet(id).subscribe(retorno => {
+      this.produto = retorno;
+    })
   }
 
   salvarProdutoPost():void{
@@ -56,6 +62,31 @@ produto: IProduto = {
       this.router.navigate(['/produtos']);
     })
   }
+
+  /** Atualizar Produto */
+  cadastrarProdutosPut():void{
+    this.produtosService.cadastrarProdutosPut(this.produto).subscribe(data => {
+      
+      console.log(data);   
+      
+      this.produto = data;
+
+      console.log("RETORNO DOS PRODUTOS >>> ", this.produto)
+      console.assert(this.produto.id != null, "O produto não foi atualizado!!!")
+      console.assert(this.produto.nomeProduto != null, "O produto não foi atualizado!!!")
+
+      //Montando mensagem de erro
+      this.produtosService.exibirMensagemErro(
+        'Sistema',
+        `${this.produto.nomeProduto} foi atualizado com sucesso.`,
+        'toast-success'
+      );
+
+      //Jogando o usuario para tela de cadastro
+      this.router.navigate(['/produtos']);
+    })
+  }
+
 
   
 
