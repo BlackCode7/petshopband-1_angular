@@ -30,6 +30,18 @@ export class ListarProdutosComponent implements OnInit {
     this.buscarProdutosGet();
   }
 
+  /** Deletando produtos */
+  deletar(produto: IProduto): void{
+    this.produtoService.excluir(produto.id).subscribe(() => {
+      this.produtoService.exibirMensagemErro('Sistema', `${produto.nomeProduto} foi excluido com sucesso!`, 'toast-error');
+      
+      /*Chamada de função para carregar os produtos na lista*/
+      this.buscarProdutosGet();
+      
+    })
+  }
+
+
    /* eu tenho listaProdutos ---> produtoService */
    buscarProdutosGet(): void{
     this.produtoService.buscarProdutosGet().subscribe(data => {

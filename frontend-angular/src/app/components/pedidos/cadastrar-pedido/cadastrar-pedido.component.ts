@@ -68,7 +68,7 @@ export class CadastrarPedidoComponent implements OnInit {
       /* Montando a mensagem de erro */
       this.pedidosService.exibirMensagemErro('Sistema', 'Pedido atualizado com sucesso', 'toast-success');
       /* Redirecionando o usuário para tela de listagem */
-      return this.router.navigate(['/pedidos']);
+      this.router.navigate(['/pedidos']);
     })
   }
 
@@ -78,8 +78,7 @@ export class CadastrarPedidoComponent implements OnInit {
       this.pedidosPP = itemsPedidos;
       this.pedidosService.exibirMensagemErro('Sistema', 
           `Pedido número ${this.pedidos.id} foi cadastrado com sucesso. Produto: ${this.pedidos.nomeProduto}, ${this.pedidos.nomeCliente}`, 
-          'toast-success'
-      );
+          'toast-success');
       this.router.navigate(['/pedidos']);
     })
   }

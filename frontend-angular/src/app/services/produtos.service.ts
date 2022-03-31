@@ -14,6 +14,15 @@ export class ProdutosService {
 
   constructor( private http: HttpClient,
                private toastr: ToastrService ) { }
+ 
+  
+  // Método para deletar produtos
+  excluir(id: number): Observable<any>{
+    return this.http.delete<any>(`${this.URL}/${id}`).pipe(
+      map(retorno => retorno),
+      catchError(erro => this.exibeErro(erro))
+    );
+  }
 
   // Método para buscar todos os produtos
   buscarProdutosGet(): Observable<IProduto[]>{
@@ -23,8 +32,6 @@ export class ProdutosService {
     );
   }
 
-  /************************************************************** */
-  /************************************************************** */
   // Método para buscar produtos por id
   buscarProdutosIDGet(id: number): Observable<IProduto>{
     return this.http.get<IProduto>(`${this.URL}/${id}`).pipe(
@@ -41,9 +48,6 @@ export class ProdutosService {
       catchError(erro => this.exibeErro(erro))
     );
   }
-  /************************************************************** */
-  /************************************************************** */
-
 
   //Método para cadastrar Produtos
   cadastrarProdutosPost(produto: IProduto): Observable<IProduto>{

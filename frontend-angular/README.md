@@ -3,6 +3,7 @@
 #### data 22/03/2022 - instalando libs
 npm install ngx-toastr --save
 npm install @angular/animations --save
+npm install sweetalert2 @sweetalert2/ngx-sweetalert2 >>> https://github.com/sweetalert2/ngx-sweetalert2
 
 
 ##### Comandos para criação dos componentes
