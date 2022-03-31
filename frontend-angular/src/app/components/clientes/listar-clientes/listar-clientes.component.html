@@ -32,7 +32,15 @@
                             routerLink="/clientes/atualizar/{{cli.id}}">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
                         </button>
-                        <button type="button" class="btn btn-danger ml-2" style="margin-left: 3px;">
+                        <button type="button" class="btn btn-danger ml-2" style="margin-left: 3px;"
+                            [swal]="{
+                                title: 'ATENÇÃO',
+                                text: 'Deseja realmente excluir o cliente:' + cli.nomeCliente + '?',
+                                showDenyButton: true,
+                                denyButtonText: 'Não',
+                                confirmButtonText: 'Sim, excluir o cliente', icon: 'warning' 
+                            }"
+                            (confirm)="deletar(cli)" >
                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                         </button>
                     </td>    

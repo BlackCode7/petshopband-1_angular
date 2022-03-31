@@ -20,6 +20,18 @@ export class ListarClientesComponent implements OnInit {
     this.buscarClientes();
   }
 
+  /** Deletando produtos */
+  deletar(cliente: ICliente): void{
+    this.clientesService.excluir(cliente.id).subscribe(() => {
+      this.clientesService.exibeMensagemErro('Sistema', `${cliente.nomeCliente} foi excluido com sucesso!`, 'toast-error');
+      
+      /*Chamada de função para carregar os produtos na lista*/
+      this.buscarClientes();
+      
+    })
+  }
+
+
   buscarClientes(): void{
     this.clientesService.buscarClientes().subscribe(data => {
       this.listaClientes = data;

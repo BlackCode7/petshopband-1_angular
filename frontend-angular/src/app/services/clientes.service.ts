@@ -18,6 +18,14 @@ export class ClientesService {
     private http: HttpClient
   ) { }
 
+// Método para deletar produtos
+excluir(id: number): Observable<any>{
+  return this.http.delete<any>(`${this.URL}/${id}`).pipe(
+    map(retorno => retorno),
+    catchError(erro => this.exibeErro(erro))
+  );
+}
+
 // Método para buscar Cliente por id
 buscarClientesIDGet(id: number): Observable<ICliente>{
   return this.http.get<ICliente>(`${this.URL}/${id}`).pipe(
