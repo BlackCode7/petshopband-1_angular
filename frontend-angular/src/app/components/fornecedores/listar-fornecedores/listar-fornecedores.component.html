@@ -35,7 +35,16 @@
                             routerLink="/fornecedores/atualizar/{{fornec.id}}"> 
                             <i class="fa fa-pencil" aria-hidden="true"></i>
                         </button>
-                        <button type="button" class="btn btn-danger ml-2" style="margin-left: 3px;">
+                        <button type="button" class="btn btn-danger ml-2" style="margin-left: 3px;"
+                            [swal]="{
+                                title: 'ATENÇÃO',
+                                text: 'Deseja realmente excluir o produto:' + fornec.nomeFornecedores + '?',
+                                showDenyButton: true,
+                                denyButtonText: 'Não',
+                                confirmButtonText: 'Sim, excluir', icon: 'warning'
+                            }" 
+                            (confirm)="deletar(fornec)"    
+                        >
                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                         </button>
                     </td>    

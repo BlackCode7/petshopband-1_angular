@@ -17,6 +17,17 @@ export class ListarFornecedoresComponent implements OnInit {
     this.buscarFornecedores();
   }
 
+  /** Deletando produtos */
+  deletar(fornecedor: IFornecedor): void{
+    this.fornecedoresService.excluir(fornecedor.id).subscribe(() => {
+      this.fornecedoresService.exibirMensagemErro('Sistema', `${fornecedor.nomeFornecedores} foi excluido com sucesso!`, 'toast-error');
+      
+      /*Chamada de função para carregar os produtos na lista*/
+      this.buscarFornecedores();
+      
+    })
+  }
+
   buscarFornecedores(): void{
     this.fornecedoresService.buscarFornecedoresGet().subscribe(data => {
       this.listaFornecedores = data;  
