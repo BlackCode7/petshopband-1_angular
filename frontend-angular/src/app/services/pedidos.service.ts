@@ -19,7 +19,13 @@ export class PedidosService {
   constructor( private toastr: ToastrService,
                private http: HttpClient ) { }
 
-               
+ // Método para deletar produtos
+ excluir(id: number): Observable<any>{
+  return this.http.delete<any>(`${this.URL}/${id}`).pipe(
+    map(retorno => retorno),
+    catchError(erro => this.exibeErro(erro))
+  );
+}
 
 // Método para buscar Cliente por id
 buscarPedidosIDGet(id: number): Observable<IPedido>{

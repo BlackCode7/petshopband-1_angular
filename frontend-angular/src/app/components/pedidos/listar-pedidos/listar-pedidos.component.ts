@@ -20,6 +20,17 @@ export class ListarPedidosComponent implements OnInit {
     this.buscarPedidos();
   }
 
+   /** Deletando produtos */
+   deletar(pedido: IPedido): void{
+    this.pedidosService.excluir(pedido.id).subscribe(() => {
+      this.pedidosService.exibirMensagemErro('Sistema', `${pedido.nomeCliente} foi excluido com sucesso!`, 'toast-error');
+      
+      /*Chamada de função para carregar os produtos na lista*/
+      this.buscarPedidos();
+      
+    })
+  }
+
   buscarPedidos(): void{
     this.pedidosService.buscarPedidos().subscribe(data => {
       this.listaPedidos = data;
