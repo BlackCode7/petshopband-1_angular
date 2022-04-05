@@ -42,8 +42,8 @@ export class ListarProdutosComponent implements OnInit {
   }
 
 
-   /* eu tenho listaProdutos ---> produtoService */
-   buscarProdutosGet(): void{
+  /* eu tenho listaProdutos ---> produtoService */
+  buscarProdutosGet(): void{
     this.produtoService.buscarProdutosGet().subscribe(data => {
         this.listaProdutos = data;
       });

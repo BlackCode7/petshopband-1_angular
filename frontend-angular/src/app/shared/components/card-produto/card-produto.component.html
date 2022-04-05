@@ -1,6 +1,5 @@
 
-<div >
-
+<div *ngFor="let item of produtoArray">
     <div class=" navbar-header">     
         <h4> Seja Bem-Vindo ao PetShopBand ! </h4>
         <p> Temos tudo o que o seu pet precisa pra ser feliz! </p>
@@ -10,21 +9,21 @@
        
         <div class="card" style="width:18em">
             
-            <img [src]="foto" alt="..." class="card-img-top">
+            <img [src]="item.foto" alt="..." class="card-img-top">
             
             <div class="card-body">
                 <h5 class="card-title">
-                    {{ nomeProduto | uppercase}} <!--Uso do pipe do angular-->
+                    {{ item.nomeProduto | uppercase}} <!--Uso do pipe do angular-->
                     <span *ngIf="promocao; else elseBlock" class="badge badge-success" >Promoção</span>
                     <ng-template #elseBlock>
                         <span class="badge badge-primary">Aproveite</span>
                     </ng-template>
                 </h5>
                 <p class="card-text">
-                    Identificação: {{ idProduto | number: '5.0-0'}}
-                    Validade: {{ dataValidade | date: 'dd/MM/yyyy'}}
+                    Identificação: {{ item.id | number: '5.0-0'}}
+                    Validade: {{ item.dataValidade | date: 'dd/MM/yyyy'}}
                 </p>  <!-- Pipe angular // | number: '5.0-32'-->
-                <a href="#" class="btn btn-primary float-right"> {{ precoProduto | currency: 'BRL'}}</a> <!-- Pipe angular // :'symbol': '1.2-3' -->
+                <a href="#" class="btn btn-primary float-right"> {{ item.precoProduto | currency: 'BRL'}}</a> <!-- Pipe angular // :'symbol': '1.2-3' -->
             </div>
         </div>        
     </div>

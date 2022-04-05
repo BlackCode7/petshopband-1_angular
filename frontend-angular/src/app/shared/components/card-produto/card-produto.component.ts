@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IProduto } from 'src/app/model/IProduto.model';
+import { ProdutosService } from 'src/app/services/produtos.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-card-produto',
@@ -14,9 +17,23 @@ export class CardProdutoComponent implements OnInit {
   @Input() nomeProduto?: string;
   @Input() foto?: string;
 
-  constructor() { }
+  produtoArray = new Array<IProduto>();
+
+  constructor(
+    private produtoService: ProdutosService
+  ) { }
 
   ngOnInit(): void {
   }
+
+  /* eu tenho listaProdutos ---> produtoService */
+  buscarProdutosGet(): void{
+    this.produtoService.buscarProdutosGet().subscribe(data => {
+        this.produtoArray = data;
+      });
+  }
+
+
+
 
 }

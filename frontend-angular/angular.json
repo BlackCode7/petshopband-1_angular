@@ -24,7 +24,11 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/uploads.php",
+              "src/assets",
+              "src/assets/images",
+              "src/env.js"
+              
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
