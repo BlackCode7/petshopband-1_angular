@@ -8,17 +8,6 @@ import { ProdutosService } from 'src/app/services/produtos.service';
   styleUrls: ['./listar-produtos.component.css']
 })
 export class ListarProdutosComponent implements OnInit {
-
-  // // Criando listas
-  // listaString: string[] = ['Celular', 'NoteBook', 'Tablet', 'impressora'];
-  // ListaNumeros: number[] = [ 12, 3, 21, 4, 32, 33, 44, 34]
-
-  // // Criando objetos
-  // objetoModelo = {
-  //   nome:'Andersdon',
-  //   idade: 43,
-  //   email: 'anderson77martins@outlook.com'
-  // }
   
   listaProdutos: IProduto[] = [];
  

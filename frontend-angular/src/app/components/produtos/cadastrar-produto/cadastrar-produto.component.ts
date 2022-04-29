@@ -56,7 +56,7 @@ produto: IProduto = {
         'Sistema',
         `${this.produto.nomeProduto} foi cadastrado com sucesso. ID: ${this.produto.id}`,
         'toast-success'
-      );
+      ); 
 
       //Jogando o usuario para tela de cadastro
       this.router.navigate(['/produtos']);

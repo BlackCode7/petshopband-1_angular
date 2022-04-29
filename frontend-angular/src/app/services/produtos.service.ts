@@ -1,4 +1,4 @@
-import { HttpClient, HttpStatusCode } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EMPTY, Observable } from 'rxjs';
 import { IProduto } from '../model/IProduto.model';
@@ -10,7 +10,12 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class ProdutosService {
 
-  private URL: string = 'http://localhost:3000/produtos/';
+  //http://localhost:8090/api/produtos
+
+  private URL: string = 'api/produtos'; // --> forma correta
+  
+  //private URL: string = 'http://localhost:8090/api/produtos';
+  //private URL: string = 'http://localhost:3000/produtos/';
 
   constructor( private http: HttpClient,
                private toastr: ToastrService ) { }
