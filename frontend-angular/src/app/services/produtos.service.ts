@@ -12,14 +12,12 @@ export class ProdutosService {
 
   //http://localhost:8090/api/produtos
 
-  private URL: string = 'api/produtos'; // --> forma correta
+  private URL: string = '/api/produtos'; // --> forma correta
   
   //private URL: string = 'http://localhost:8090/api/produtos';
   //private URL: string = 'http://localhost:3000/produtos/';
 
-  constructor( private http: HttpClient,
-               private toastr: ToastrService ) { }
- 
+  constructor( private http: HttpClient, private toastr: ToastrService ) { } 
   
   // Método para deletar produtos
   excluir(id: number): Observable<any>{

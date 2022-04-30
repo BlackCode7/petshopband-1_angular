@@ -71,3 +71,6 @@ registerLocaleData(localePt);
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
+
+//ng build
+//ng build --watch --configuration development
